@@ -8,17 +8,42 @@ $grey:		    lighten($black, 20%);
 $lightGrey:	  	lighten($black, 70%);
 $lighterGrey:   lighten($black, 100%);
 $offWhite: 		#FAFAFA;
-$white: 		#FFF;
+$white: 		  #FFF;
+
+$text-color: $black;
 
 
-
-//// FONTS ////
-$base-font-size: 	20px;
-$sansFamily: 		Arial, 'sans-serif';
+//// BREAKPOINTS ////
+$mobile:    768px;
+$tablet:    1024px;
+$desktop:   1200px;
 
 
 //// MIXINS ////
-@mixin transition($time: 0.3s) {
+@mixin transition($time: 0.5s) {
 	-webkit-transition: all $time;
 	transition: all $time;
+}
+@mixin transform($props) {
+  -ms-transform: $props;
+  -webkit-transform: $props;
+  transform: $props;
+}
+@mixin yCenter() {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+@mixin xCenter() {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  @include transform(translateX(-50%));
+}
+@mixin centerEl() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
 }

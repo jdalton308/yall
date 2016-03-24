@@ -8,6 +8,7 @@ var htmlMin = require('gulp-htmlmin');
 var server = require('gulp-server-livereload');
 
 var styleFiles = [
+        'node_modules/bootstrap-grid/grid.css',
         './src/scss/main.scss'
     ];
 var jsFiles = [

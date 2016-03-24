@@ -1,0 +1,128 @@
+
+// TYPOGRAPHY
+// --------------
+
+$chronicleFonts: "Chronicle Display A", "Chronicle Display B", times, serif;
+//x Article Title: 75px -- H1
+//x Home Headers: 55px -- H2
+//x Home Author occupation: 32px - italic -- H3
+//x Article Author: 32px - italic -- H3
+// Home Quote callout: 45px
+//x Home Article type: 21px - bold -- H4
+//x Article callout: 30px - bold
+//x Paragraph: 25px
+
+$whitneyFonts: "Whitney A", "Whitney B", arial, sans-serif;
+// Article header cities: 24px -- h5
+// Home cities: 24px
+// Nav: 18px  -- h6
+// Captions: 15px - 400
+
+$baseFontSize: 20px;
+
+
+body {
+  font-family: $whitneyFonts;
+  font-size: $baseFontSize;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: $chronicleFonts;
+  line-height: 1.3em;
+  font-weight: 400;
+}
+h1 {
+  font-size: 2rem;
+
+  @media (min-width: $mobile) {
+    font-size: 3.75rem; // 75px
+  }
+}
+h2 {
+  font-size: 1.5rem;
+
+  @media (min-width: $mobile) {
+    font-size: 2.75rem; // 55px
+  }
+}
+h3 {
+  font-size: 1.3rem;
+  font-style: italic;
+
+  @media (min-width: $mobile) {
+    font-size: 1.6rem; // 32px
+  }
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+
+  @media (min-width: $mobile) {
+    font-size: 1.05rem; // 21px
+  }
+}
+
+h5,
+h6 {
+  margin: 0;
+  font-family: $whitneyFonts;
+  line-height: 1.2em;
+  font-weight: 700;
+}
+h5 {
+  font-size: 1.2rem; // 24px
+
+  @media (min-width: $mobile) {
+    font-size: 1.2rem; // 24px
+  }
+}
+h6 {
+  font-size: 0.9rem; // 18px
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+  @include transition();
+
+  &:visited {
+    color: $text-color;
+  }
+
+  @media (min-width: $mobile) {
+    &:hover {
+      
+    }
+  }
+}
+
+p {
+  font-size: 1rem;
+  line-height: 2em;
+  margin-bottom: 10px;
+
+  &.callout {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  @media (min-width: $mobile) {
+    font-size: 1.25rem;
+
+    &.callout {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+blockquote {
+  font-size: 2.25rem;
+  font-weight: 400;
+  font-family: $chronicleFonts;
+  line-height: 1.7em;
+}

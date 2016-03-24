@@ -1,0 +1,64 @@
+
+// HOME
+// ---------------
+
+#home {
+  header {
+    margin-bottom: 40px;
+  }
+  .feature-item {
+    position: relative;
+    width: 100%;
+
+    img {
+      display: inline-block;
+    }
+    .item-copy {
+      // position: absolute;
+      text-align: left;
+
+      .item-type {
+        margin-bottom: 50px;
+
+        p {
+          display: inline;
+        }
+      }
+      .item-title {
+        margin-bottom: 10px;
+      }
+      .item-author {
+        margin-bottom: 50px;
+      }
+      .item-route {
+        position: relative;
+        padding: 10px 0;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 90px;
+          height: 3px;
+          background-color: $text-color;
+        }
+      }
+    }
+
+    &.first-child {
+      text-align: right;
+
+      .item-image {
+        @extend .col-xs-12;
+        @extend .col-sm-10;
+      }
+      .item-copy {
+        @include yCenter();
+        left: 8.33%; // 1/12th
+      }
+    }
+
+
+  }
+
+}
+  
