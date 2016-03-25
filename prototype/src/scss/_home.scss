@@ -3,6 +3,8 @@
 // ---------------
 
 #home {
+  padding-top: 70px;
+
   header {
     margin-bottom: 40px;
   }
@@ -12,9 +14,11 @@
 
     img {
       display: inline-block;
+      float: none;
     }
     .item-copy {
       // position: absolute;
+      display: inline-block;
       text-align: left;
 
       .item-type {
@@ -36,6 +40,9 @@
 
         &:before {
           content: '';
+          position: absolute;
+          top: -0;
+          left: 0;
           display: inline-block;
           width: 90px;
           height: 3px;
@@ -44,19 +51,19 @@
       }
     }
 
-    &.first-child {
+    &:first-child {
       text-align: right;
 
       .item-image {
-        @extend .col-xs-12;
-        @extend .col-sm-10;
+        // @extend .col-xs-12;
+        // @extend .col-sm-10;
       }
       .item-copy {
         @include yCenter();
+        z-index: 2;
         left: 8.33%; // 1/12th
       }
     }
-
 
   }
 

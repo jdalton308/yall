@@ -8,16 +8,16 @@ var htmlMin = require('gulp-htmlmin');
 var server = require('gulp-server-livereload');
 
 var styleFiles = [
-        'node_modules/bootstrap-grid/grid.css',
-        './src/scss/main.scss'
-    ];
+      'node_modules/bootstrap-grid/grid.css',
+      './src/scss/main.scss'
+  ];
 var jsFiles = [
-		'node_modules/jquery/dist/jquery.min.js',
-		'./src/js/**/*.js'
+  		'node_modules/jquery/dist/jquery.min.js',
+  		'./src/js/**/*.js'
 	];
 var htmlFiles = [
-		'./src/html/**/*.html'
-]
+		  './src/html/**/*.html'
+  ];
 
 
 gulp.task('styles', function() {
@@ -47,12 +47,12 @@ gulp.task('server', function(){
 	gulp.src('./build')
 		.pipe(server({
 			livereload: true,
-			open: true
+      host: '127.0.0.1'
 		}));
 });
 
 gulp.task('watch', function(){
-    gulp.watch(['./src/css/scss/**/*.scss'], ['styles']);
+    gulp.watch(['./src/scss/**/*.scss'], ['styles']);
     gulp.watch(['./src/js/**/*.js'], ['scripts']);
     gulp.watch(['./src/html/**/*.html'], ['html'])
 });

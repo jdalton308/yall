@@ -3,14 +3,15 @@
 //============================
 
 //// COLORS ////
-$black:		    #000;
-$grey:		    lighten($black, 20%);
-$lightGrey:	  	lighten($black, 70%);
-$lighterGrey:   lighten($black, 100%);
-$offWhite: 		#FAFAFA;
-$white: 		  #FFF;
+$black:		        #000;
+$grey-dark:       #1F2D4C;
+$grey:		        #444;
+$grey-light:	  	#AAA;
+$grey-lighter:    #CCC;
+$offWhite: 		    #FAFAFA;
+$white: 		      #FFF;
 
-$text-color: $black;
+$text-color:      $black;
 
 
 //// BREAKPOINTS ////

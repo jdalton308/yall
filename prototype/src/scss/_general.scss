@@ -12,12 +12,13 @@ body {
 	width: 100%;
 	min-height: 100%;
 }
-body {
-	font-size: $base-font-size;
-	font-family: $sansFamily;
-	color: $text-color;
-}
 main {
 	max-width: 1400px;
+	margin: 0 auto;
 }
 
+// GRID EDITS
+//--------------------
+// *[class*="col-"] {
+// 	float: none;
+// }
