@@ -16,9 +16,22 @@ main {
 	max-width: 1400px;
 	margin: 0 auto;
 }
+blockquote {
+	margin: 0;
+}
 
 // GRID EDITS
 //--------------------
-// *[class*="col-"] {
-// 	float: none;
-// }
+[class*="col-"] {
+	padding: 0;
+	float: none;
+}
+
+
+// FORMS
+// ------------------
+input[type="text"] {
+	margin: 0;
+	padding: 14px 12px;
+	border: 1px solid $grey-lighter;
+}

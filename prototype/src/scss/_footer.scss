@@ -1,0 +1,89 @@
+
+// Footer
+// --------------
+
+footer {
+  width: 100%;
+  background-color: $offWhite;
+
+  .subscribe-bar {
+    text-align: center;
+    padding: 20px;
+    @extend h3;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 3px solid $white;
+
+    input {
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    @media (min-width: $mobile) {
+      input {
+        display: inline-block;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .footer-body {
+    width: 100%;
+    padding: 30px 20px;
+
+    .footer-col {
+      width: 100%;
+      margin-bottom: 30px;
+
+      .footer-title {
+        @extend p;
+        font-family: $chronicleFonts;
+        font-weight: 700;
+      }
+      p,
+      a {
+        font-size: 1rem;
+        line-height: 1.3em;
+        font-family: $chronicleFonts;
+      }
+      .footer-list {
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+        .list-item {
+          display: inline-block;
+          float: left;
+          width: 45%;
+
+          &:nth-child(even) {
+            margin-right: 10%;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $mobile) {
+      width: 66%;
+      padding: 55px 0;
+      margin: 0 auto;
+
+      .footer-col {
+        display: inline-block;
+        vertical-align: top;
+        width: 30%;
+        padding-right: 2%;
+
+        &:first-child {
+          padding-right: 5%;
+        }
+        .footer-list {
+          .list-item {
+            width: 40%;
+          }
+        }
+      }
+    }
+  }
+}

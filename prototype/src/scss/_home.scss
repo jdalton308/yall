@@ -8,64 +8,202 @@
   header {
     margin-bottom: 40px;
   }
-  .feature-item {
-    position: relative;
-    width: 100%;
+  .feature-item,
+  .more-item {
 
     img {
-      display: inline-block;
-      float: none;
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
     }
     .item-copy {
       // position: absolute;
-      display: inline-block;
+      // display: inline-block;
+      padding: 0 20px;
       text-align: left;
 
       .item-type {
-        margin-bottom: 50px;
+        margin-bottom: 3px;
 
+        .divider {
+          display: inline-block;
+          margin: 0 6px;
+        }
         p {
-          display: inline;
+          display: inline-block;
+          margin: 0;
+          font-weight: 400;
         }
       }
       .item-title {
-        margin-bottom: 10px;
+        margin-bottom: 0;
       }
       .item-author {
-        margin-bottom: 50px;
+        margin-bottom: 7px;
       }
       .item-route {
         position: relative;
-        padding: 10px 0;
+        padding: 8px 0 0;
 
         &:before {
           content: '';
           position: absolute;
-          top: -0;
+          top: 0;
           left: 0;
           display: inline-block;
-          width: 90px;
-          height: 3px;
+          width: 60px;
+          height: 2px;
           background-color: $text-color;
         }
       }
     }
 
-    &:first-child {
-      text-align: right;
-
-      .item-image {
-        // @extend .col-xs-12;
-        // @extend .col-sm-10;
+    @media (min-width: $mobile) {
+      img {
+        display: inline-block;
+        float: none;
+        margin-bottom: 0;
       }
       .item-copy {
-        @include yCenter();
-        z-index: 2;
-        left: 8.33%; // 1/12th
+        // position: absolute;
+        display: inline-block;
+        text-align: left;
+
+        .item-type {
+          margin-bottom: 50px;
+        }
+        .item-title {
+          margin-bottom: 10px;
+        }
+        .item-author {
+          margin-bottom: 50px;
+        }
+        .item-route {
+          position: relative;
+          padding: 10px 0;
+
+          &:before {
+            width: 90px;
+            height: 3px;
+          }
+        }
+      }
+
+    } // end media-query
+
+  } // end .feature-item, .more-item
+
+  .feature-item {
+    position: relative;
+    width: 100%;
+    margin-bottom: 100px;
+
+    &:first-child {
+      margin-bottom: 70px;
+      text-align: right;
+    }
+    @media (min-width: $mobile) {
+      margin-bottom: 50px;
+
+      &:first-child {
+        margin-bottom: 190px;
+        text-align: right;
+
+        img {
+          width: 83.33%;
+        }
+        .item-copy {
+          @include yCenter();
+          z-index: 2;
+          left: 8.33%; // 1/12th
+        }
+      }
+    }
+  }
+
+  .more-grid {
+    width: 100%;
+    padding: 20px;
+    background-color: $grey-lighter;
+
+    > h3 {
+      text-align: center;
+      margin: 0 0 30px;
+    }
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    @media (min-width: $mobile) {
+      width: 83.33%;
+      margin: 0 auto;
+    }
+  }
+  .more-item {
+    display: inline-block;
+    float: left;
+    width: 48%;
+    margin-bottom: 40px;
+
+    .item-copy {
+      padding: 0;
+      text-align: left;
+
+      .item-type {
+        margin: 0;
+
+        p {
+          line-height: 1.2em;
+        }
+      }
+      .item-title {
+        font-size: 1.4rem;
+      }
+      .item-author {
+        display: none;
+      }
+      .item-route {
+        font-size: 0.7rem;
+      }
+      .item-route {
+        padding: 8px 0 0;
       }
     }
 
+    &:nth-child(even) {
+      margin-right: 4%;
+    }
+
+    @media (min-width: $mobile) {
+      margin-bottom: 50px;
+
+      .item-author {
+        display: block;
+      }
+      .item-title {
+        font-size: 2.75rem;
+      }
+      .item-route {
+        font-size: 1.2rem;
+      }
+    }
   }
+
+  .quote-callout {
+    width: 80%;
+    min-width: 300px;
+    margin: 0 auto 60px;
+    text-align: center;
+
+    @media (min-width: $mobile) {
+      width: 66%;
+      margin: 0 auto 160px;
+    }
+  }
+
 
 }
   
