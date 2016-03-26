@@ -16,7 +16,9 @@ footer {
 
     input {
       display: block;
+      width: 300px;
       margin: 10px auto 0;
+      color: $gold;
     }
 
     @media (min-width: $mobile) {

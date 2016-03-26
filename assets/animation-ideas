@@ -1,0 +1,13 @@
+
+GENERAL:
+- Animation speed: .8s
+- Curve: 
+
+NAV:
+Hover:
+- bottom border slides from left
+
+HOMEPAGE:
+On Scroll:
+- Quote fades in
+- Image/text fields fold open like book
