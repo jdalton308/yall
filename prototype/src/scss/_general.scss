@@ -22,6 +22,10 @@ main {
 blockquote {
 	margin: 0;
 }
+figure {
+  margin: 0;
+  padding: 0;
+}
 
 // GRID EDITS
 //--------------------
@@ -29,6 +33,103 @@ blockquote {
 	padding: 0;
 	float: none;
 }
+
+
+// MORE GRID
+//------------------
+.more-grid {
+  width: 100%;
+  padding: 20px 0;
+
+  > h3 {
+    text-align: center;
+    margin: 0 0 30px;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  @media (min-width: $mobile) {
+    width: 83.33%;
+    margin: 0 auto;
+  }
+}
+.more-item {
+  display: inline-block;
+  float: left;
+  width: calc(50% - 10px);
+  margin-bottom: 40px;
+
+  &:nth-child(even) {
+    margin-right: 20px;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .item-copy {
+    text-align: left;
+
+    .item-type {
+      margin: 0;
+      font-size: 0.85rem;
+
+      .divider {
+        display: inline-block;
+        margin: 0 6px;
+      }
+      p {
+        display: inline-block;
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1em;
+      }
+    }
+    .item-title {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+    .item-author {
+      display: none;
+    }
+    .item-route {
+      font-size: 0.7rem;
+    }
+  }
+
+  @media (min-width: $mobile) {
+    margin-bottom: 50px;
+    
+    img {
+      margin-bottom: 15px;
+    }
+    .item-copy {
+      .item-type {
+        margin-bottom: 11px;
+      }
+      .item-author,
+      .item-title {
+        display: inline-block;
+        font-size: 1.2rem;
+      }
+      .item-title {
+        margin-right: 10px;
+      }
+      .item-route {
+        font-size: 1rem;
+      }
+    }
+      
+  }
+} // end .more-item
+
 
 
 // FORMS

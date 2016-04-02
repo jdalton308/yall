@@ -1,0 +1,114 @@
+.hero-title-section {
+  img.hero {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .title-copy {
+    @include tenWideCenter();
+    text-align: center;
+
+    .title-logo {
+      display: block;
+      height: 65px;
+      margin: 0 auto 42px;
+    }
+    .article-type-date {
+      margin-bottom: 40px;
+    }
+    .article-title {
+      margin-bottom: 10px;
+    }
+    .article-author {
+      margin-bottom: 45px;
+    }
+    .article-route {
+      position: relative;
+      display: inline-block;
+      padding: 5px 0;
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: $gold;
+      }
+      &:before {
+        top: 0;
+      }
+      &:after {
+        bottom: 0;
+      }
+    }
+  }
+}
+.article-section {
+  p {
+    @include tenWideCenter();
+  }
+  .image-width-caption {
+    display: block;
+    @include tenWideCenter();
+    margin-bottom: 35px;
+    
+    img {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    figcaption {
+      font-size: 12px;
+    }
+  }
+  .full-width-image {
+    display: block;
+    width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+    figcaption {
+      @include tenWideCenter();
+      font-size: 12px;
+    }
+  }
+  blockquote {
+    display: block;
+    @include tenWideCenter();
+
+    @media (min-width: $mobile) {
+      display: inline-block;
+      position: relative;
+      width: 40%;
+      margin: 20px 20px 20px 0;
+
+      &.left {
+        float: left;
+        right: 10%;
+      }
+      &.right {
+        float: right;
+        left: 10%;
+      }
+    }
+  }
+}
+.credits-section {
+  @include tenWideCenter();
+  padding-bottom: 75px;
+
+  .divider-line {
+    width: 40%;
+    height: 2px;
+    background-color: $gold;
+  }
+  p {
+    font-style: italic;
+  }
+}
