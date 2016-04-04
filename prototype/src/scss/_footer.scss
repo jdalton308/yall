@@ -6,6 +6,9 @@ footer {
   width: 100%;
   background-color: $offWhite;
 
+  a {
+    color: $text-color;
+  }
   .subscribe-bar {
     text-align: center;
     padding: 20px;
@@ -16,7 +19,8 @@ footer {
 
     input {
       display: block;
-      width: 300px;
+      width: 100%;
+      max-width: 300px;
       margin: 10px auto 0;
       color: $gold;
     }
@@ -36,6 +40,15 @@ footer {
     .footer-col {
       width: 100%;
       margin-bottom: 30px;
+
+      &:last-child {
+        .footer-list {
+          .list-item {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
 
       .footer-title {
         @extend p;
@@ -59,7 +72,11 @@ footer {
           float: left;
           width: 45%;
 
-          &:nth-child(even) {
+          &.top {
+            margin-bottom: 15px;
+          }
+
+          &:nth-child(odd) {
             margin-right: 10%;
           }
         }
@@ -70,15 +87,20 @@ footer {
       width: 66%;
       padding: 55px 0;
       margin: 0 auto;
+      text-align: center;
 
       .footer-col {
         display: inline-block;
         vertical-align: top;
         width: 30%;
         padding-right: 2%;
+        text-align: left;
 
         &:first-child {
           padding-right: 5%;
+        }
+        &:last-child {
+          padding-left: 1%;
         }
         .footer-list {
           .list-item {

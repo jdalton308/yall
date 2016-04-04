@@ -27,6 +27,18 @@ figure {
   padding: 0;
 }
 
+.quote-callout {
+  width: 80%;
+  min-width: 300px;
+  margin: 0 auto 60px;
+  text-align: center;
+
+  @media (min-width: $mobile) {
+    width: 66%;
+    margin: 0 auto 160px;
+  }
+}
+
 // GRID EDITS
 //--------------------
 [class*="col-"] {

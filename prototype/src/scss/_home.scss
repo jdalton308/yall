@@ -3,7 +3,6 @@
 // ---------------
 
 #home {
-  padding-top: 70px;
 
   header {
     margin-bottom: 40px;
@@ -204,18 +203,6 @@
 
     } // end media query
   } // end feature-item
-
-  .quote-callout {
-    width: 80%;
-    min-width: 300px;
-    margin: 0 auto 60px;
-    text-align: center;
-
-    @media (min-width: $mobile) {
-      width: 66%;
-      margin: 0 auto 160px;
-    }
-  }
 
 
 }

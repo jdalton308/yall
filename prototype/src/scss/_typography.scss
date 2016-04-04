@@ -101,12 +101,12 @@ h6 {
 }
 
 a {
-  color: $text-color;
+  color: $gold;
   text-decoration: none;
   @include transition();
 
   &:visited {
-    color: $text-color;
+    color: $gold;
   }
 
   @media (min-width: $mobile) {
