@@ -1,0 +1,9 @@
+{
+  "firebase": "yall-collective",
+  "public": "build",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}

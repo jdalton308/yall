@@ -21,7 +21,36 @@ header {
     .nav-item {
       display: inline-block;
       padding: 5px 15px;
+      color: $text-color;
       @extend h6;
+
+      &.current {
+        color: $gold;
+      }
+    }
+
+    @media (min-width: $mobile) {
+      .nav-item {
+        position: relative;
+        overflow: hidden;
+        
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -100%;
+          display: inline-block;
+          height: 2px;
+          width: 100%;
+          background-color: $gold;
+          @include transition(0.7s);
+        }
+        &:hover {
+          &:before {
+            left: 0;
+          }
+        }
+      }
     }
   }
 

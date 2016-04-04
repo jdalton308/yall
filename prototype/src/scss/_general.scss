@@ -49,14 +49,15 @@ figure {
 
 // MORE GRID
 //------------------
-.more-grid {
-  width: 100%;
-  padding: 20px 0;
-
+.more-section {
   > h3 {
     text-align: center;
     margin: 0 0 30px;
   }
+}
+.more-grid {
+  width: 100%;
+  padding: 20px 0;
 
   &:after {
     content: '';

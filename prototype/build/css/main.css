@@ -878,12 +878,13 @@ figure {
   padding: 0;
   float: none; }
 
+.more-section > h3, footer .more-section > .subscribe-bar {
+  text-align: center;
+  margin: 0 0 30px; }
+
 .more-grid {
   width: 100%;
   padding: 20px 0; }
-  .more-grid > h3, footer .more-grid > .subscribe-bar {
-    text-align: center;
-    margin: 0 0 30px; }
   .more-grid:after {
     content: '';
     display: table;
@@ -964,7 +965,27 @@ header {
     width: 100%; }
     header nav .nav-item {
       display: inline-block;
-      padding: 5px 15px; }
+      padding: 5px 15px;
+      color: #18223d; }
+      header nav .nav-item.current {
+        color: #bd9b37; }
+    @media (min-width: 768px) {
+      header nav .nav-item {
+        position: relative;
+        overflow: hidden; }
+        header nav .nav-item:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -100%;
+          display: inline-block;
+          height: 2px;
+          width: 100%;
+          background-color: #bd9b37;
+          -webkit-transition: all 0.7s;
+          transition: all 0.7s; }
+        header nav .nav-item:hover:before {
+          left: 0; } }
   header.sticky {
     position: fixed;
     z-index: 10;
@@ -1029,7 +1050,8 @@ footer {
       footer .footer-body .footer-col a {
         font-size: 1rem;
         line-height: 1.3em;
-        font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
+        font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
+        color: #18223d; }
       footer .footer-body .footer-col .footer-list:after {
         content: '';
         display: table;
