@@ -5,6 +5,7 @@
 header {
   padding-top: 70px;
   text-align: center;
+  @include transition();
 
   .icon-logo {
     display: inline-block;
@@ -27,12 +28,18 @@ header {
       &.current {
         color: $gold;
       }
+      &.disabled {
+        color: $grey-light;
+        pointer-events: none;
+      }
     }
 
     @media (min-width: $mobile) {
       .nav-item {
         position: relative;
         overflow: hidden;
+        padding: 5px 0;
+        margin: 0 15px;
         
         &:before {
           content: '';
@@ -53,8 +60,15 @@ header {
       }
     }
   }
+  .social-links {
+    display: none;
+  }
 
-  &.sticky {
+  @at-root .sticky {
+    padding-top: 195px;
+  }
+
+  @at-root .sticky & {
     position: fixed;
     z-index: 10;
     top: 0;
@@ -79,7 +93,8 @@ header {
       width: auto;
 
       .nav-item {
-        padding: 5px 20px;
+        padding: 5px 0;
+        margin: 0 20px;
       }
     }
     .social-links {

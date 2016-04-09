@@ -5,6 +5,7 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var htmlMin = require('gulp-htmlmin');
+var fileInclude = require('gulp-file-include');
 var server = require('gulp-server-livereload');
 
 var styleFiles = [
@@ -37,6 +38,10 @@ gulp.task('scripts', function(){
 
 gulp.task('html', function(){
 	gulp.src(htmlFiles)
+    .pipe(fileInclude ({
+      prefix: '@@',
+      basepath: './src/html/'
+    }))
 		.pipe(htmlMin({
 			collapseWhitespace: true
 		}))

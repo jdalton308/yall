@@ -771,6 +771,9 @@ a {
   transition: all 0.5s; }
   a:visited {
     color: #bd9b37; }
+  a.disabled {
+    color: #AAA;
+    pointer-events: none; }
 
 p, footer .footer-body .footer-col .footer-title {
   font-size: 1rem;
@@ -793,6 +796,9 @@ blockquote {
   @media (min-width: 768px) {
     blockquote {
       font-size: 2.8rem; } }
+
+span.quote {
+  font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
 
 @font-face {
   font-family: 'yall-icons';
@@ -869,10 +875,35 @@ figure {
   min-width: 300px;
   margin: 0 auto 60px;
   text-align: center; }
+  .quote-callout .quote-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    color: #bd9b37; }
   @media (min-width: 768px) {
     .quote-callout {
       width: 66%;
       margin: 0 auto 160px; } }
+
+.come-back-section {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 0 20px 100px;
+  text-align: center; }
+  @media (min-width: 768px) {
+    .come-back-section {
+      padding: 30px 0 140px; }
+      .come-back-section h2 {
+        font-size: 2.25rem;
+        margin-bottom: 20px; }
+      .come-back-section h4 {
+        max-width: 400px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        font-weight: 400; }
+      .come-back-section .social-links {
+        margin-top: 20px;
+        text-align: center; } }
 
 [class*="col-"] {
   padding: 0;
@@ -954,7 +985,9 @@ input[type="number"] {
 
 header {
   padding-top: 70px;
-  text-align: center; }
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
   header .icon-logo {
     display: inline-block;
     margin-bottom: 20px; }
@@ -969,10 +1002,15 @@ header {
       color: #18223d; }
       header nav .nav-item.current {
         color: #bd9b37; }
+      header nav .nav-item.disabled {
+        color: #AAA;
+        pointer-events: none; }
     @media (min-width: 768px) {
       header nav .nav-item {
         position: relative;
-        overflow: hidden; }
+        overflow: hidden;
+        padding: 5px 0;
+        margin: 0 15px; }
         header nav .nav-item:before {
           content: '';
           position: absolute;
@@ -986,7 +1024,11 @@ header {
           transition: all 0.7s; }
         header nav .nav-item:hover:before {
           left: 0; } }
-  header.sticky {
+  header .social-links {
+    display: none; }
+  .sticky {
+    padding-top: 195px; }
+  .sticky header {
     position: fixed;
     z-index: 10;
     top: 0;
@@ -996,21 +1038,22 @@ header {
     text-align: center;
     background-color: #FFF;
     box-shadow: 0 0 15px #f1f1f1; }
-    header.sticky .icon-logo {
+    .sticky header .icon-logo {
       float: left;
       margin: 0; }
-      header.sticky .icon-logo:before {
+      .sticky header .icon-logo:before {
         font-size: 30px;
         color: #bd9b37; }
-    header.sticky nav {
+    .sticky header nav {
       display: inline-block;
       width: auto; }
-      header.sticky nav .nav-item {
-        padding: 5px 20px; }
-    header.sticky .social-links {
+      .sticky header nav .nav-item {
+        padding: 5px 0;
+        margin: 0 20px; }
+    .sticky header .social-links {
       display: inline-block;
       float: right; }
-      header.sticky .social-links a {
+      .sticky header .social-links a {
         display: inline-block; }
 
 footer {
@@ -1085,6 +1128,63 @@ footer {
 
 #home header {
   margin-bottom: 40px; }
+
+#home main {
+  position: relative; }
+
+#home .back-letter {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  font-size: 50px;
+  color: #f9f9f9;
+  font-family: "Whitney A", "Whitney B", arial, sans-serif;
+  font-weight: 700; }
+  #home .back-letter.letter-1 {
+    top: 32%;
+    left: 30%; }
+  #home .back-letter.letter-2 {
+    top: 34%;
+    left: 57%; }
+  #home .back-letter.letter-3 {
+    top: 40%;
+    left: 68%; }
+  #home .back-letter.letter-4 {
+    top: 43%;
+    left: 20%; }
+  #home .back-letter.letter-5 {
+    top: 50%;
+    left: 3%; }
+  #home .back-letter.letter-6 {
+    top: 57%;
+    left: 21%; }
+  #home .back-letter.letter-7 {
+    top: 61%;
+    left: 77%; }
+  #home .back-letter.letter-8 {
+    top: 66%;
+    left: 70%; }
+  #home .back-letter.letter-9 {
+    top: 73%;
+    left: 79%; }
+  #home .back-letter.letter-10 {
+    top: 84%;
+    left: 60%; }
+  #home .back-letter.letter-11 {
+    top: 86%;
+    left: 14%; }
+  #home .back-letter.letter-12 {
+    top: 90%;
+    left: 72%; }
+  #home .back-letter.letter-13 {
+    top: 93%;
+    left: 29%; }
+  #home .back-letter.letter-14 {
+    top: 95%;
+    left: 61%; }
+  @media (min-width: 768px) {
+    #home .back-letter {
+      font-size: 100px; } }
 
 #home .featured-items {
   margin-bottom: 50px; }
