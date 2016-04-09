@@ -6,9 +6,10 @@ $font-path: "/assets/fonts";
 
 $icon-logo-gold: "\e900";
 $icon-pinterest: "\e901";
-$icon-arrow-right: "\e902";
 $icon-facebook: "\e903";
 $icon-twitter: "\e904";
+$icon-feather-arrow: "\27BC";
+
 
 @font-face {
   font-family: 'yall-icons';
@@ -44,11 +45,6 @@ $icon-twitter: "\e904";
     content: $icon-pinterest;
   }
 }
-.icon-arrow-right {
-  &:before {
-    content: $icon-arrow-right;
-  }
-}
 .icon-facebook {
   &:before {
     content: $icon-facebook;
@@ -57,6 +53,17 @@ $icon-twitter: "\e904";
 .icon-twitter {
   &:before {
     content: $icon-twitter;
+  }
+}
+.icon-feather-arrow {
+  display: inline-block;
+  margin: 0 2px;
+  padding-top: 2px;
+  font-size: 0.9em;
+  line-height: 0.8em;
+
+  &:before {
+    content: $icon-feather-arrow;
   }
 }
 
@@ -73,5 +80,11 @@ $icon-twitter: "\e904";
   &:before {
     font-size: 16px;
     color: $white;
+  }
+
+  @media (min-width: $mobile) {
+    &:hover {
+      background-color: $black;
+    }
   }
 }

@@ -777,6 +777,12 @@ a {
   a.disabled {
     color: #AAA;
     pointer-events: none; }
+  @media (min-width: 768px) {
+    a {
+      border-bottom: 1px solid transparent; }
+      a:hover {
+        color: #18223d;
+        border-bottom: 1px solid #bd9b37; } }
 
 p, footer .footer-body .footer-col .footer-title {
   font-size: 1rem;
@@ -834,14 +840,20 @@ span.quote {
 .icon-pinterest:before {
   content: ""; }
 
-.icon-arrow-right:before {
-  content: ""; }
-
 .icon-facebook:before {
   content: ""; }
 
 .icon-twitter:before {
   content: ""; }
+
+.icon-feather-arrow {
+  display: inline-block;
+  margin: 0 2px;
+  padding-top: 2px;
+  font-size: 0.9em;
+  line-height: 0.8em; }
+  .icon-feather-arrow:before {
+    content: "➼"; }
 
 .gold-icon {
   display: inline-block;
@@ -855,6 +867,9 @@ span.quote {
   .gold-icon:before {
     font-size: 16px;
     color: #FFF; }
+  @media (min-width: 768px) {
+    .gold-icon:hover {
+      background-color: #000; } }
 
 * {
   box-sizing: border-box; }
@@ -993,6 +1008,7 @@ input[type="number"] {
 
 header {
   padding-top: 70px;
+  margin-bottom: 40px;
   text-align: center;
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
@@ -1001,6 +1017,9 @@ header {
     margin-bottom: 20px; }
     header .icon-logo:before {
       font-size: 60px;
+      color: #bd9b37; }
+    header .icon-logo:hover {
+      border: none;
       color: #bd9b37; }
   header nav {
     width: 100%; }
@@ -1018,7 +1037,8 @@ header {
         position: relative;
         overflow: hidden;
         padding: 5px 0;
-        margin: 0 15px; }
+        margin: 0 15px;
+        border: none; }
         header nav .nav-item:before {
           content: '';
           position: absolute;
@@ -1095,14 +1115,17 @@ footer {
         display: block;
         width: 100%; }
       footer .footer-body .footer-col .footer-title {
+        font-size: 0.9rem;
         font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
         font-weight: 700; }
       footer .footer-body .footer-col p, footer .footer-body .footer-col .footer-title,
       footer .footer-body .footer-col a {
-        font-size: 1rem;
-        line-height: 1.3em;
+        font-size: 0.7rem;
+        line-height: 1.8em;
         font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
         color: #18223d; }
+      footer .footer-body .footer-col a.disabled {
+        color: #AAA; }
       footer .footer-body .footer-col .footer-list:after {
         content: '';
         display: table;
@@ -1110,32 +1133,27 @@ footer {
       footer .footer-body .footer-col .footer-list .list-item {
         display: inline-block;
         float: left;
-        width: 45%; }
+        width: 50%; }
         footer .footer-body .footer-col .footer-list .list-item.top {
           margin-bottom: 15px; }
-        footer .footer-body .footer-col .footer-list .list-item:nth-child(odd) {
-          margin-right: 10%; }
     @media (min-width: 768px) {
       footer .footer-body {
         width: 66%;
+        max-width: 960px;
         padding: 55px 0;
         margin: 0 auto;
         text-align: center; }
         footer .footer-body .footer-col {
           display: inline-block;
           vertical-align: top;
-          width: 30%;
-          padding-right: 2%;
+          width: 220px;
+          margin-right: 140px;
           text-align: left; }
-          footer .footer-body .footer-col:first-child {
-            padding-right: 5%; }
           footer .footer-body .footer-col:last-child {
-            padding-left: 1%; }
+            margin-right: 0; }
           footer .footer-body .footer-col .footer-list .list-item {
-            width: 40%; } }
-
-#home header {
-  margin-bottom: 40px; }
+            width: 50%;
+            margin-right: 0; } }
 
 #home main {
   position: relative; }
@@ -1268,7 +1286,8 @@ footer {
     text-align: right; }
   @media (min-width: 768px) {
     #home .feature-item {
-      margin-bottom: 100px; }
+      margin-bottom: 100px;
+      border: none; }
       #home .feature-item:after {
         content: '';
         display: table;

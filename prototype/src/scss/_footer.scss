@@ -52,15 +52,21 @@ footer {
 
       .footer-title {
         @extend p;
+        font-size: 0.9rem;
         font-family: $chronicleFonts;
         font-weight: 700;
       }
       p,
       a {
-        font-size: 1rem;
-        line-height: 1.3em;
+        font-size: 0.7rem;
+        line-height: 1.8em;
         font-family: $chronicleFonts;
         color: $text-color;
+      }
+      a {
+        &.disabled {
+          color: $grey-light;
+        }
       }
       .footer-list {
         &:after {
@@ -71,14 +77,10 @@ footer {
         .list-item {
           display: inline-block;
           float: left;
-          width: 45%;
+          width: 50%;
 
           &.top {
             margin-bottom: 15px;
-          }
-
-          &:nth-child(odd) {
-            margin-right: 10%;
           }
         }
       }
@@ -86,6 +88,7 @@ footer {
 
     @media (min-width: $mobile) {
       width: 66%;
+      max-width: 960px;
       padding: 55px 0;
       margin: 0 auto;
       text-align: center;
@@ -93,19 +96,17 @@ footer {
       .footer-col {
         display: inline-block;
         vertical-align: top;
-        width: 30%;
-        padding-right: 2%;
+        width: 220px;
+        margin-right: 140px;
         text-align: left;
 
-        &:first-child {
-          padding-right: 5%;
-        }
         &:last-child {
-          padding-left: 1%;
+          margin-right: 0;
         }
         .footer-list {
           .list-item {
-            width: 40%;
+            width: 50%;
+            margin-right: 0;
           }
         }
       }

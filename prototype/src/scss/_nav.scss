@@ -4,6 +4,7 @@
 
 header {
   padding-top: 70px;
+  margin-bottom: 40px;
   text-align: center;
   @include transition();
 
@@ -13,6 +14,10 @@ header {
 
     &:before {
       font-size: 60px;
+      color: $gold;
+    }
+    &:hover {
+      border: none;
       color: $gold;
     }
   }
@@ -40,6 +45,7 @@ header {
         overflow: hidden;
         padding: 5px 0;
         margin: 0 15px;
+        border: none;
         
         &:before {
           content: '';

@@ -17,7 +17,7 @@ var jsFiles = [
   		'./src/js/**/*.js'
 	];
 var htmlFiles = [
-		  './src/html/**/*.html'
+		  './src/html/*.html'
   ];
 
 
