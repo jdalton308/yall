@@ -27,7 +27,7 @@ $whitneyFonts: "Whitney A", "Whitney B", arial, sans-serif;
 $baseFontSize: 20px;
 
 
-body {
+html {
   font-family: $chronicleFonts;
   font-size: $baseFontSize;
   color: $text-color;
@@ -93,6 +93,11 @@ h5 {
 
   @media (min-width: $mobile) {
     font-size: 1.2rem; // 24px
+
+    &.question {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
   }
 }
 h6 {
@@ -129,12 +134,23 @@ p {
     font-size: 1.25rem;
     font-weight: 700;
   }
+  &.intro {
+    font-style: italic;
+    font-size: 1.25rem;
+
+    em {
+      font-style: normal;
+    }
+  }
 
   @media (min-width: $mobile) {
     font-size: 1.25rem;
 
     &.callout {
       font-size: 1.5rem;
+    }
+    &.intro {
+      font-size: 1.4rem;
     }
   }
 }
@@ -146,7 +162,7 @@ blockquote {
   line-height: 1.3em;
 
   @media (min-width: $mobile) {
-    font-size: 2.8rem; // 45px
+    font-size: 2.25rem; // 45px
   }
 }
 

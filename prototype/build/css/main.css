@@ -699,7 +699,7 @@
   .col-lg-offset-0 {
     margin-left: 0%; } }
 
-body {
+html {
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
   font-size: 20px;
   color: #18223d; }
@@ -758,7 +758,10 @@ h5 {
   letter-spacing: 0.5px; }
   @media (min-width: 768px) {
     h5 {
-      font-size: 1.2rem; } }
+      font-size: 1.2rem; }
+      h5.question {
+        font-size: 1.5rem;
+        margin-bottom: 15px; } }
 
 h6, header nav .nav-item {
   font-size: 0.9rem;
@@ -782,11 +785,18 @@ p, footer .footer-body .footer-col .footer-title {
   p.callout, footer .footer-body .footer-col .callout.footer-title {
     font-size: 1.25rem;
     font-weight: 700; }
+  p.intro, footer .footer-body .footer-col .intro.footer-title {
+    font-style: italic;
+    font-size: 1.25rem; }
+    p.intro em, footer .footer-body .footer-col .intro.footer-title em {
+      font-style: normal; }
   @media (min-width: 768px) {
     p, footer .footer-body .footer-col .footer-title {
       font-size: 1.25rem; }
       p.callout, footer .footer-body .footer-col .callout.footer-title {
-        font-size: 1.5rem; } }
+        font-size: 1.5rem; }
+      p.intro, footer .footer-body .footer-col .intro.footer-title {
+        font-size: 1.4rem; } }
 
 blockquote {
   font-size: 1.6rem;
@@ -795,7 +805,7 @@ blockquote {
   line-height: 1.3em; }
   @media (min-width: 768px) {
     blockquote {
-      font-size: 2.8rem; } }
+      font-size: 2.25rem; } }
 
 span.quote {
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
@@ -886,7 +896,7 @@ figure {
       margin: 0 auto 160px; } }
 
 .come-back-section {
-  max-width: 550px;
+  max-width: 660px;
   margin: 0 auto;
   padding: 0 20px 100px;
   text-align: center; }
@@ -897,8 +907,6 @@ figure {
         font-size: 2.25rem;
         margin-bottom: 20px; }
       .come-back-section h4 {
-        max-width: 400px;
-        margin: 0 auto;
         font-size: 1.2rem;
         font-weight: 400; }
       .come-back-section .social-links {
@@ -1141,7 +1149,7 @@ footer {
   font-family: "Whitney A", "Whitney B", arial, sans-serif;
   font-weight: 700; }
   #home .back-letter.letter-1 {
-    top: 32%;
+    top: 30%;
     left: 30%; }
   #home .back-letter.letter-2 {
     top: 34%;
@@ -1214,9 +1222,11 @@ footer {
         left: 105%; } }
 
 #home .feature-item {
+  display: block;
   position: relative;
   width: 100%;
-  margin-bottom: 100px; }
+  margin-bottom: 50px;
+  color: #18223d; }
   #home .feature-item img {
     display: block;
     width: 100%;
@@ -1228,7 +1238,8 @@ footer {
       margin-bottom: 3px; }
       #home .feature-item .item-copy .item-type .divider {
         display: inline-block;
-        margin: 0 6px; }
+        margin: 0 6px;
+        font-weight: 700; }
       #home .feature-item .item-copy .item-type p, #home .feature-item .item-copy .item-type footer .footer-body .footer-col .footer-title, footer .footer-body .footer-col #home .feature-item .item-copy .item-type .footer-title {
         display: inline-block;
         margin: 0;
@@ -1257,11 +1268,13 @@ footer {
     text-align: right; }
   @media (min-width: 768px) {
     #home .feature-item {
-      margin-bottom: 50px; }
+      margin-bottom: 100px; }
       #home .feature-item:after {
         content: '';
         display: table;
         clear: both; }
+      #home .feature-item:hover {
+        color: #bd9b37; }
       #home .feature-item img {
         display: inline-block;
         margin-bottom: 0; }
@@ -1344,12 +1357,70 @@ footer {
         top: 0; }
       .hero-title-section .title-copy .article-route:after {
         bottom: 0; }
+  .hero-title-section.portrait {
+    position: relative;
+    width: 83.33%;
+    margin: 0 auto; }
+    .hero-title-section.portrait img.hero {
+      max-width: 400px;
+      margin: 0 auto; }
+    @media (min-width: 768px) {
+      .hero-title-section.portrait {
+        padding-top: 80px; }
+        .hero-title-section.portrait img.hero {
+          display: inline-block;
+          max-width: none;
+          width: 50%;
+          position: absolute;
+          right: 0;
+          top: 0; }
+        .hero-title-section.portrait .icon-logo {
+          display: none; }
+        .hero-title-section.portrait .title-copy {
+          position: static;
+          display: inline-block;
+          margin: 0;
+          width: 50%;
+          text-align: left;
+          padding-top: 80px; }
+          .hero-title-section.portrait .title-copy .intro {
+            padding: 100px 0; } }
 
 .article-section {
   width: 83.33%;
   margin: 0 auto; }
   .article-section p, .article-section footer .footer-body .footer-col .footer-title, footer .footer-body .footer-col .article-section .footer-title {
     margin-bottom: 15px; }
+  .article-section img.left-img, .article-section img.right-img {
+    display: block;
+    width: 100%; }
+  @media (min-width: 768px) {
+    .article-section img.left-img, .article-section img.right-img {
+      display: inline-block;
+      width: 50%; }
+    .article-section img.left-img {
+      float: left; }
+    .article-section img.right-img {
+      float: right; } }
+  .article-section .far-right-img {
+    display: block;
+    width: 100%;
+    margin: 35px 0; }
+    .article-section .far-right-img img {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px; }
+    .article-section .far-right-img figcaption {
+      font-size: 12px; }
+    @media (min-width: 768px) {
+      .article-section .far-right-img {
+        float: right;
+        position: relative;
+        top: 0;
+        left: 5%;
+        display: inline-block;
+        width: 40%;
+        margin: 0 0 35px; } }
   .article-section .image-with-caption {
     display: block;
     margin: 35px 0; }
@@ -1397,7 +1468,8 @@ footer {
     background-color: #bd9b37; }
   .credits-section p, .credits-section footer .footer-body .footer-col .footer-title, footer .footer-body .footer-col .credits-section .footer-title {
     margin: 0;
-    font-style: italic; }
+    font-style: italic;
+    color: #AAA; }
 
 .more-section {
   width: 83.33%;

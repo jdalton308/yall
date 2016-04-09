@@ -21,7 +21,7 @@
     font-weight: 700;
 
     &.letter-1 {
-      top: 32%;
+      top: 30%;
       left: 30%;
     }
     &.letter-2 {
@@ -151,9 +151,11 @@
   } // end .featured-items
 
   .feature-item {
+    display: block;
     position: relative;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    color: $text-color;
 
     img {
       display: block;
@@ -170,6 +172,7 @@
         .divider {
           display: inline-block;
           margin: 0 6px;
+          font-weight: 700;
         }
         p {
           display: inline-block;
@@ -209,12 +212,16 @@
     }
 
     @media (min-width: $mobile) {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
 
       &:after {
         content: '';
         display: table;
         clear: both;
+      }
+
+      &:hover {
+        color: $gold;
       }
 
       img {
