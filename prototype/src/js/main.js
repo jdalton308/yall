@@ -55,6 +55,8 @@ $(function(){
   header.init();
 
 
+  // BACKGROUND LETTERS ON HOMEPAGE
+  //-------------------------------
   var homeScroll = (function(){
     var $backLetters = $('.back-letter');
     var midScreen = $window.height() * .7;
@@ -101,6 +103,8 @@ $(function(){
   homeScroll.init();
 
 
+  // TO-TOP BTN
+  //-------------------------------
   var toTopBtn = (function(){
     var $topBtn = $('.to-top-btn');
     var showSpot = $window.height();

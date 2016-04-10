@@ -1150,6 +1150,7 @@ header {
         opacity: 1;
         padding: 0; }
         header nav .nav-item {
+          font-family: "Whitney A", "Whitney B", arial, sans-serif;
           display: inline-block;
           position: relative;
           overflow: hidden;
