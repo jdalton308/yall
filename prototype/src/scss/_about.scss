@@ -6,10 +6,11 @@
     line-height: 1.5em;
   }
   .quote-callout {
-    margin-top: 60px;
+    padding-top: 60px;
 
     @media (min-width: $mobile) {
-      margin: 60px auto;
+      margin: 0 auto;
+      padding: 60px 0 80px;
     }
   }
   .founder-photo-section,

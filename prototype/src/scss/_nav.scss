@@ -11,19 +11,22 @@ header {
   background-color: $white;
   padding: 14px 20px 9px;
   text-align: left;
-  @include transition();
+  // @include transition();
   box-shadow: 0 0 15px #f1f1f1;
 
   @media (min-width: $mobile) {
     position: static;
-    padding: 70px 0 0;
-    margin-bottom: 40px;
+    top: auto;
+    left: auto;
+    padding: 70px 0 40px;
     text-align: center;
     box-shadow: none;
   }
 
   .icon-logo {
     display: inline-block;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
 
     &:before {
       font-size: 30px;
@@ -161,23 +164,31 @@ header {
 
   @media (min-width: $mobile) {
     @at-root .sticky {
-      padding-top: 195px;
+      padding-top: 225px;
     }
 
     @at-root .sticky & {
       position: fixed;
       z-index: 10;
-      top: 0;
+      top: -50%;
       left: 0;
       width: 100%;
       padding: 33px 30px 30px;
       text-align: center;
       background-color: $white;
       box-shadow: 0 0 15px #f1f1f1;
+      -webkit-transition: top 0.7s ease-out;
+      transition: top 0.7s ease-out;
+
+      &.show {
+        top: 0;
+      }
 
       .icon-logo {
         float: left;
+        width: 30%;
         margin: 0;
+        text-align: left;
 
         &:before {
           font-size: 30px;
@@ -196,6 +207,8 @@ header {
       .social-links {
         display: inline-block;
         float: right;
+        width: 30%;
+        text-align: right;
 
         a {
           display: inline-block;

@@ -54,6 +54,45 @@ figure {
   }
 }
 
+.to-top-btn {
+  position: fixed;
+  bottom: 5%;
+  right: -5%;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  @include transition();
+
+  &.show {
+    opacity: 1;
+    right: 5%;
+  }
+
+  .icon-feather-arrow {
+    position: relative;
+    left: -6px;
+    font-size: 20px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  h6 {
+    font-size: 0.7rem;
+  }
+
+  @media (min-width: $mobile) {
+    text-align: left;
+
+    .icon-feather-arrow {
+      font-size: 30px;
+    }
+    &:hover {
+      color: $gold;
+    }
+  }
+}
+
 // COME BACK SECTION
 //-----------------------
 .come-back-section {

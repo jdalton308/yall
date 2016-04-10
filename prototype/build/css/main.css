@@ -922,6 +922,36 @@ figure {
       width: 66%;
       margin: 0 auto 160px; } }
 
+.to-top-btn {
+  position: fixed;
+  bottom: 5%;
+  right: -5%;
+  display: inline-block;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+  .to-top-btn.show {
+    opacity: 1;
+    right: 5%; }
+  .to-top-btn .icon-feather-arrow {
+    position: relative;
+    left: -6px;
+    font-size: 20px;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .to-top-btn h6, .to-top-btn header nav .nav-item, header nav .to-top-btn .nav-item {
+    font-size: 0.7rem; }
+  @media (min-width: 768px) {
+    .to-top-btn {
+      text-align: left; }
+      .to-top-btn .icon-feather-arrow {
+        font-size: 30px; }
+      .to-top-btn:hover {
+        color: #bd9b37; } }
+
 .come-back-section {
   max-width: 660px;
   margin: 0 auto;
@@ -1033,18 +1063,19 @@ header {
   background-color: #FFF;
   padding: 14px 20px 9px;
   text-align: left;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
   box-shadow: 0 0 15px #f1f1f1; }
   @media (min-width: 768px) {
     header {
       position: static;
-      padding: 70px 0 0;
-      margin-bottom: 40px;
+      top: auto;
+      left: auto;
+      padding: 70px 0 40px;
       text-align: center;
       box-shadow: none; } }
   header .icon-logo {
-    display: inline-block; }
+    display: inline-block;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s; }
     header .icon-logo:before {
       font-size: 30px;
       color: #bd9b37; }
@@ -1144,20 +1175,26 @@ header {
     display: none; }
   @media (min-width: 768px) {
     .sticky {
-      padding-top: 195px; }
+      padding-top: 225px; }
     .sticky header {
       position: fixed;
       z-index: 10;
-      top: 0;
+      top: -50%;
       left: 0;
       width: 100%;
       padding: 33px 30px 30px;
       text-align: center;
       background-color: #FFF;
-      box-shadow: 0 0 15px #f1f1f1; }
+      box-shadow: 0 0 15px #f1f1f1;
+      -webkit-transition: top 0.7s ease-out;
+      transition: top 0.7s ease-out; }
+      .sticky header.show {
+        top: 0; }
       .sticky header .icon-logo {
         float: left;
-        margin: 0; }
+        width: 30%;
+        margin: 0;
+        text-align: left; }
         .sticky header .icon-logo:before {
           font-size: 30px;
           color: #bd9b37; }
@@ -1169,7 +1206,9 @@ header {
           margin: 0 20px; }
       .sticky header .social-links {
         display: inline-block;
-        float: right; }
+        float: right;
+        width: 30%;
+        text-align: right; }
         .sticky header .social-links a {
           display: inline-block; } }
 
@@ -1258,7 +1297,11 @@ footer {
   font-size: 50px;
   color: #f9f9f9;
   font-family: "Whitney A", "Whitney B", arial, sans-serif;
-  font-weight: 700; }
+  font-weight: 700;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s; }
+  #home .back-letter.hide {
+    opacity: 0; }
   #home .back-letter.letter-1 {
     top: 30%;
     left: 30%; }
@@ -1740,10 +1783,11 @@ footer {
   line-height: 1.5em; }
 
 #about .quote-callout {
-  margin-top: 60px; }
+  padding-top: 60px; }
   @media (min-width: 768px) {
     #about .quote-callout {
-      margin: 60px auto; } }
+      margin: 0 auto;
+      padding: 60px 0 80px; } }
 
 #about .founder-photo-section,
 #about .about-content-section {

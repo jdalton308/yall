@@ -16,6 +16,11 @@
     color: $offWhite;
     font-family: $whitneyFonts;
     font-weight: 700;
+    @include transition();
+
+    &.hide {
+      opacity: 0;
+    }
 
     &.letter-1 {
       top: 30%;
