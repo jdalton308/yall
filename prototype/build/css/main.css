@@ -712,7 +712,7 @@ h4 {
   margin: 0;
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
   line-height: 1.3em;
-  font-weight: 400; }
+  font-weight: 200; }
 
 h1 {
   font-size: 2rem; }
@@ -787,22 +787,21 @@ a {
 p, footer .footer-body .footer-col .footer-title {
   font-size: 1rem;
   line-height: 2em;
-  margin: 0 0 10px; }
+  margin: 0 0 10px;
+  font-family: "Chronicle SSm A", "Chronicle SSm B", times, serif; }
   p.callout, footer .footer-body .footer-col .callout.footer-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700; }
   p.intro, footer .footer-body .footer-col .intro.footer-title {
     font-style: italic;
-    font-size: 1.25rem; }
+    font-size: 1.1rem; }
     p.intro em, footer .footer-body .footer-col .intro.footer-title em {
       font-style: normal; }
   @media (min-width: 768px) {
-    p, footer .footer-body .footer-col .footer-title {
-      font-size: 1.25rem; }
-      p.callout, footer .footer-body .footer-col .callout.footer-title {
-        font-size: 1.5rem; }
-      p.intro, footer .footer-body .footer-col .intro.footer-title {
-        font-size: 1.4rem; } }
+    p.callout, footer .footer-body .footer-col .callout.footer-title {
+      font-size: 1.2rem; }
+    p.intro, footer .footer-body .footer-col .intro.footer-title {
+      font-size: 1.2rem; } }
 
 blockquote {
   font-size: 1.6rem;
@@ -915,18 +914,21 @@ figure {
   margin: 0 auto;
   padding: 0 20px 100px;
   text-align: center; }
+  .come-back-section h2 {
+    margin-bottom: 20px; }
+  .come-back-section .social-links {
+    margin-top: 25px;
+    text-align: center; }
   @media (min-width: 768px) {
     .come-back-section {
       padding: 30px 0 140px; }
       .come-back-section h2 {
-        font-size: 2.25rem;
-        margin-bottom: 20px; }
+        font-size: 2.25rem; }
       .come-back-section h4 {
         font-size: 1.2rem;
         font-weight: 400; }
       .come-back-section .social-links {
-        margin-top: 20px;
-        text-align: center; } }
+        margin-top: 20px; } }
 
 [class*="col-"] {
   padding: 0;
@@ -1017,16 +1019,27 @@ header {
     margin-bottom: 20px; }
     header .icon-logo:before {
       font-size: 60px;
-      color: #bd9b37; }
+      color: #bd9b37;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s; }
     header .icon-logo:hover {
       border: none;
       color: #bd9b37; }
+    @media (min-width: 768px) {
+      header .icon-logo {
+        border-bottom: none; }
+        header .icon-logo:hover {
+          border-bottom: none; }
+          header .icon-logo:hover:before {
+            color: #000; } }
   header nav {
     width: 100%; }
     header nav .nav-item {
       display: inline-block;
-      padding: 5px 15px;
-      color: #18223d; }
+      padding: 6px 15px 5px;
+      color: #18223d;
+      font-weight: 500;
+      font-size: 0.75rem; }
       header nav .nav-item.current {
         color: #bd9b37; }
       header nav .nav-item.disabled {
@@ -1036,7 +1049,7 @@ header {
       header nav .nav-item {
         position: relative;
         overflow: hidden;
-        padding: 5px 0;
+        padding: 7px 0 5px;
         margin: 0 15px;
         border: none; }
         header nav .nav-item:before {
@@ -1045,7 +1058,7 @@ header {
           bottom: 0;
           left: -100%;
           display: inline-block;
-          height: 2px;
+          height: 1px;
           width: 100%;
           background-color: #bd9b37;
           -webkit-transition: all 0.7s;
@@ -1138,16 +1151,16 @@ footer {
           margin-bottom: 15px; }
     @media (min-width: 768px) {
       footer .footer-body {
-        width: 66%;
-        max-width: 960px;
+        width: 90%;
+        max-width: 933px;
         padding: 55px 0;
         margin: 0 auto;
         text-align: center; }
         footer .footer-body .footer-col {
           display: inline-block;
           vertical-align: top;
-          width: 220px;
-          margin-right: 140px;
+          width: 22.92%;
+          margin-right: 14.58%;
           text-align: left; }
           footer .footer-body .footer-col:last-child {
             margin-right: 0; }
@@ -1345,9 +1358,16 @@ footer {
   .hero-title-section .title-copy {
     position: relative;
     top: -24px;
-    width: 83.33%;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px;
     text-align: center; }
+    @media (min-width: 768px) {
+      .hero-title-section .title-copy {
+        width: 66.66%;
+        max-width: none;
+        margin: 0 auto; } }
     .hero-title-section .title-copy .icon-logo {
       display: block;
       margin: 0 auto 42px;
@@ -1356,8 +1376,15 @@ footer {
         font-size: 65px; }
     .hero-title-section .title-copy .article-type-date {
       margin-bottom: 40px; }
+      .hero-title-section .title-copy .article-type-date .date {
+        display: inline-block;
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1em;
+        letter-spacing: 0; }
     .hero-title-section .title-copy .article-title {
-      margin-bottom: 10px; }
+      margin-bottom: 0; }
     .hero-title-section .title-copy .article-author {
       margin-bottom: 45px; }
     .hero-title-section .title-copy .article-route {
@@ -1378,8 +1405,15 @@ footer {
         bottom: 0; }
   .hero-title-section.portrait {
     position: relative;
-    width: 83.33%;
-    margin: 0 auto; }
+    width: 100%;
+    max-width: 400px;
+    padding-left: 20px;
+    padding-right: 20px; }
+    @media (min-width: 768px) {
+      .hero-title-section.portrait {
+        width: 66.66%;
+        max-width: none;
+        margin: 0 auto; } }
     .hero-title-section.portrait img.hero {
       max-width: 400px;
       margin: 0 auto; }
@@ -1396,31 +1430,61 @@ footer {
         .hero-title-section.portrait .icon-logo {
           display: none; }
         .hero-title-section.portrait .title-copy {
-          position: static;
+          z-index: 2;
+          top: 0;
           display: inline-block;
           margin: 0;
-          width: 50%;
+          width: 66%;
           text-align: left;
-          padding-top: 80px; }
+          padding: 80px 0 0; }
           .hero-title-section.portrait .title-copy .intro {
             padding: 100px 0; } }
 
 .article-section {
-  width: 83.33%;
-  margin: 0 auto; }
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media (min-width: 768px) {
+    .article-section {
+      width: 66.66%;
+      max-width: none;
+      margin: 0 auto; } }
   .article-section p, .article-section footer .footer-body .footer-col .footer-title, footer .footer-body .footer-col .article-section .footer-title {
-    margin-bottom: 15px; }
+    margin-bottom: 15px;
+    font-size: 1rem; }
+    .article-section p.intro, .article-section footer .footer-body .footer-col .intro.footer-title, footer .footer-body .footer-col .article-section .intro.footer-title {
+      font-size: 1.1rem; }
+  .article-section > p:last-child:after, footer .footer-body .footer-col .article-section > .footer-title:last-child:after {
+    font-family: 'yall-icons';
+    content: "";
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    margin-left: 10px;
+    padding-top: 2px;
+    font-size: 11px;
+    line-height: 20px;
+    width: 22px;
+    color: #FFF;
+    background-color: #18223d;
+    border-radius: 50%;
+    text-align: center; }
   .article-section img.left-img, .article-section img.right-img {
     display: block;
     width: 100%; }
   @media (min-width: 768px) {
     .article-section img.left-img, .article-section img.right-img {
       display: inline-block;
-      width: 50%; }
+      width: 46%; }
+      .article-section img.left-img.portrait, .article-section img.right-img.portrait {
+        width: 57%; }
     .article-section img.left-img {
-      float: left; }
+      float: left;
+      margin: 9px 20px 10px 0; }
     .article-section img.right-img {
-      float: right; } }
+      float: right;
+      margin: 9px 0 10px 20px; } }
   .article-section .far-right-img {
     display: block;
     width: 100%;
@@ -1435,11 +1499,11 @@ footer {
       .article-section .far-right-img {
         float: right;
         position: relative;
-        top: 0;
         left: 5%;
         display: inline-block;
         width: 40%;
-        margin: 0 0 35px; } }
+        margin: 0 0 20px;
+        padding-top: 9px; } }
   .article-section .image-with-caption {
     display: block;
     margin: 35px 0; }
@@ -1461,6 +1525,10 @@ footer {
       margin-bottom: 5px; }
     .article-section .full-width-image figcaption {
       font-size: 12px; }
+    @media (min-width: 768px) {
+      .article-section .full-width-image img {
+        left: -25%;
+        width: 150%; } }
   .article-section blockquote {
     display: block; }
     @media (min-width: 768px) {
@@ -1477,9 +1545,16 @@ footer {
           left: 5%; } }
 
 .credits-section {
-  width: 83.33%;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
   margin: 75px auto; }
+  @media (min-width: 768px) {
+    .credits-section {
+      width: 66.66%;
+      max-width: none;
+      margin: 0 auto; } }
   .credits-section .divider-line {
     width: 40%;
     height: 2px;
@@ -1487,12 +1562,25 @@ footer {
     background-color: #bd9b37; }
   .credits-section p, .credits-section footer .footer-body .footer-col .footer-title, footer .footer-body .footer-col .credits-section .footer-title {
     margin: 0;
+    line-height: 1.5em;
     font-style: italic;
     color: #AAA; }
+    .credits-section p:first-of-type, .credits-section footer .footer-body .footer-col .footer-title:first-of-type, footer .footer-body .footer-col .credits-section .footer-title:first-of-type {
+      margin-bottom: 20px; }
+  @media (min-width: 768px) {
+    .credits-section {
+      margin: 85px auto 75px; } }
 
 .more-section {
-  width: 83.33%;
-  margin: 0 auto; }
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media (min-width: 768px) {
+    .more-section {
+      width: 66.66%;
+      max-width: none;
+      margin: 0 auto; } }
   .more-section .more-title {
     text-align: center; }
 
@@ -1510,8 +1598,16 @@ footer {
 
 #about .founder-photo-section,
 #about .about-content-section {
-  width: 83.33%;
-  margin: 0 auto; }
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px; }
+  @media (min-width: 768px) {
+    #about .founder-photo-section,
+    #about .about-content-section {
+      width: 66.66%;
+      max-width: none;
+      margin: 0 auto; } }
 
 #about .founder-photo-section figure {
   display: block;

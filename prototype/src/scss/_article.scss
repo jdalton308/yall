@@ -23,9 +23,18 @@
     }
     .article-type-date {
       margin-bottom: 40px;
+
+      .date {
+        display: inline-block;
+        margin: 0;
+        font-size: 0.8rem;
+        font-weight: 400;
+        line-height: 1em;
+        letter-spacing: 0;
+      }
     }
     .article-title {
-      margin-bottom: 10px;
+      margin-bottom: 0;
     }
     .article-author {
       margin-bottom: 45px;
@@ -78,12 +87,13 @@
         display: none;
       }
       .title-copy {
-        position: static;
+        z-index: 2;
+        top: 0;
         display: inline-block;
         margin: 0;
-        width: 50%;
+        width: 66%;
         text-align: left;
-        padding-top: 80px;
+        padding: 80px 0 0;
 
         .intro {
           padding: 100px 0;
@@ -98,8 +108,35 @@
   @include tenWideCenter();
 
   p {
-    // @include tenWideCenter();
     margin-bottom: 15px;
+    font-size: 1rem;
+
+    &.intro {
+      font-size: 1.1rem;
+    }
+  }
+  > p {
+    &:last-child {
+
+      &:after {
+        font-family: 'yall-icons';
+        content: $icon-logo-gold;
+        position: relative;
+        top: -3px;
+
+        display: inline-block;
+        margin-left: 10px;
+        padding-top: 2px;
+        font-size: 11px;
+        line-height: 20px;
+        width: 22px;
+
+        color: $white;
+        background-color: $text-color;
+        border-radius: 50%;
+        text-align: center;
+      }
+    }
   }
   img {
     &.left-img,
@@ -111,13 +148,19 @@
       &.left-img,
       &.right-img {
         display: inline-block;
-        width: 50%;
+        width: 46%;
+
+        &.portrait {
+          width: 57%
+        }
       }
       &.left-img {
         float: left;
+        margin: 9px 20px 10px 0;
       }
       &.right-img {
         float: right;
+        margin: 9px 0 10px 20px;
       }
     }
   }
@@ -138,11 +181,11 @@
     @media (min-width: $mobile) {
       float: right;
       position: relative;
-      top: 0;
       left: 5%;
       display: inline-block;
       width: 40%;
-      margin: 0 0 35px;
+      margin: 0 0 20px;
+      padding-top: 9px;
     }
   }
   .image-with-caption {
@@ -174,6 +217,13 @@
     figcaption {
       // @include tenWideCenter();
       font-size: 12px;
+    }
+
+    @media (min-width: $mobile) {
+      img {
+        left: -25%;
+        width: 150%;
+      }
     }
   }
   blockquote {
@@ -211,8 +261,17 @@
   }
   p {
     margin: 0;
+    line-height: 1.5em;
     font-style: italic;
     color: $grey-light;
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (min-width: $mobile) {
+    margin: 85px auto 75px;
   }
 }
 

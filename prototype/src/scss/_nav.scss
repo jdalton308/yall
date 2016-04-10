@@ -15,10 +15,23 @@ header {
     &:before {
       font-size: 60px;
       color: $gold;
+      @include transition();
     }
     &:hover {
       border: none;
       color: $gold;
+    }
+
+    @media (min-width: $mobile) {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+
+        &:before {
+          color: $black;
+        }
+      }
     }
   }
   nav {
@@ -26,9 +39,11 @@ header {
 
     .nav-item {
       display: inline-block;
-      padding: 5px 15px;
+      padding: 6px 15px 5px;
       color: $text-color;
       @extend h6;
+      font-weight: 500;
+      font-size: 0.75rem;
 
       &.current {
         color: $gold;
@@ -43,7 +58,7 @@ header {
       .nav-item {
         position: relative;
         overflow: hidden;
-        padding: 5px 0;
+        padding: 7px 0 5px;
         margin: 0 15px;
         border: none;
         
@@ -53,7 +68,7 @@ header {
           bottom: 0;
           left: -100%;
           display: inline-block;
-          height: 2px;
+          height: 1px;
           width: 100%;
           background-color: $gold;
           @include transition(0.7s);
@@ -113,10 +128,4 @@ header {
     }
   }
 
-  @media (min-width: $mobile) {
-    nav {
-      .nav-item {
-      }
-    }
-  }
 }

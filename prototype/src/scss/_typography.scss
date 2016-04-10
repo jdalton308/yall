@@ -15,6 +15,8 @@ $chronicleFonts: "Chronicle Display A", "Chronicle Display B", times, serif;
 // USING:
 // 200, 200i, 400, 700
 
+$chronicleBodyFont: "Chronicle SSm A", "Chronicle SSm B", times, serif;
+
 $whitneyFonts: "Whitney A", "Whitney B", arial, sans-serif;
 // Article header cities: 24px -- h5
 // Home cities: 24px
@@ -40,7 +42,7 @@ h4 {
   margin: 0;
   font-family: $chronicleFonts;
   line-height: 1.3em;
-  font-weight: 400;
+  font-weight: 200;
 }
 h1 {
   font-size: 2rem;
@@ -132,14 +134,15 @@ p {
   font-size: 1rem;
   line-height: 2em;
   margin: 0 0 10px;
+  font-family: $chronicleBodyFont;
 
   &.callout {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
   }
   &.intro {
     font-style: italic;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
 
     em {
       font-style: normal;
@@ -147,13 +150,12 @@ p {
   }
 
   @media (min-width: $mobile) {
-    font-size: 1.25rem;
 
     &.callout {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     &.intro {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
     }
   }
 }
