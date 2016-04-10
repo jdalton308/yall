@@ -161,10 +161,21 @@ p {
 }
 
 blockquote {
+  position: relative;
   font-size: 1.6rem;
   font-weight: 200;
   font-family: $chronicleFonts;
   line-height: 1.3em;
+
+  &:before {
+    content: '“';
+    position: absolute;
+    top: 0;
+    left: -0.4em;
+  }
+  &:after {
+    content: '”';
+  }
 
   @media (min-width: $mobile) {
     font-size: 2.25rem; // 45px
@@ -173,4 +184,9 @@ blockquote {
 
 span.quote {
   font-family: $chronicleFonts;
+}
+
+::selection {
+  color: $text-color;
+  background: $gold;
 }

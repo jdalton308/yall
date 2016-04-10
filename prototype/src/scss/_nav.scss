@@ -3,19 +3,31 @@
 //-----------
 
 header {
-  padding-top: 70px;
-  margin-bottom: 40px;
-  text-align: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  padding: 10px 20px;
+  text-align: left;
   @include transition();
+  box-shadow: 0 0 15px #f1f1f1;
+
+  @media (min-width: $mobile) {
+    position: static;
+    padding: 70px 0 0;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: none;
+  }
 
   .icon-logo {
     display: inline-block;
-    margin-bottom: 20px;
 
     &:before {
-      font-size: 60px;
+      font-size: 30px;
       color: $gold;
-      @include transition();
     }
     &:hover {
       border: none;
@@ -23,7 +35,13 @@ header {
     }
 
     @media (min-width: $mobile) {
+      margin-bottom: 20px;
       border-bottom: none;
+
+      &:before {
+        font-size: 60px;
+        @include transition();
+      }
 
       &:hover {
         border-bottom: none;
@@ -34,16 +52,59 @@ header {
       }
     }
   }
+  .mobile-btn {
+    display: inline-block;
+    float: right;
+    padding: 10px;
+    width: 50px;
+
+    .bar {
+      display: block;
+      width: 100%;
+      height: 5px;
+      margin-bottom: 8px;
+      background-color: $gold;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
+  }
+  &.open {
+    nav {
+      z-index: 10;
+      bottom: 0;
+      opacity: 1;
+    }
+    .mobile-btn {
+      position: relative;
+      z-index: 11;
+    }
+  }
   nav {
+    position: fixed;
+    left: 0;
+    bottom: 110%;
     width: 100%;
+    height: 100vh;
+    opacity: 0;
+    padding-top: 50px;
+
+    text-align: center;
+    background-color: $white;
+    -webkit-transition: opacity 1s, bottom 1s;
+    transition: opacity 1s, bottom 1s;
 
     .nav-item {
-      display: inline-block;
-      padding: 6px 15px 5px;
+      display: block;
+      padding: 2vh 20px 3vh;
       color: $text-color;
-      @extend h6;
       font-weight: 500;
-      font-size: 0.75rem;
+      font-size: 6vh;
 
       &.current {
         color: $gold;
@@ -55,11 +116,18 @@ header {
     }
 
     @media (min-width: $mobile) {
+      width: 100%;
+
       .nav-item {
+        display: inline-block;
         position: relative;
         overflow: hidden;
         padding: 7px 0 5px;
         margin: 0 15px;
+
+        @extend h6;
+        font-weight: 500;
+        font-size: 0.75rem;
         border: none;
         
         &:before {
@@ -85,45 +153,47 @@ header {
     display: none;
   }
 
-  @at-root .sticky {
-    padding-top: 195px;
-  }
-
-  @at-root .sticky & {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 33px 30px 30px;
-    text-align: center;
-    background-color: $white;
-    box-shadow: 0 0 15px #f1f1f1;
-
-    .icon-logo {
-      float: left;
-      margin: 0;
-
-      &:before {
-        font-size: 30px;
-        color: $gold;
-      }
+  @media (min-width: $mobile) {
+    @at-root .sticky {
+      padding-top: 195px;
     }
-    nav {
-      display: inline-block;
-      width: auto;
 
-      .nav-item {
-        padding: 5px 0;
-        margin: 0 20px;
+    @at-root .sticky & {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 33px 30px 30px;
+      text-align: center;
+      background-color: $white;
+      box-shadow: 0 0 15px #f1f1f1;
+
+      .icon-logo {
+        float: left;
+        margin: 0;
+
+        &:before {
+          font-size: 30px;
+          color: $gold;
+        }
       }
-    }
-    .social-links {
-      display: inline-block;
-      float: right;
-
-      a {
+      nav {
         display: inline-block;
+        width: auto;
+
+        .nav-item {
+          padding: 5px 0;
+          margin: 0 20px;
+        }
+      }
+      .social-links {
+        display: inline-block;
+        float: right;
+
+        a {
+          display: inline-block;
+        }
       }
     }
   }

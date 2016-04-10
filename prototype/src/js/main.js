@@ -15,6 +15,7 @@ $(function(){
 
     var $header = $('header');
     var $window = $(window);
+    var $mobileBtn = $header.find('.mobile-btn');
     var stickThreshold = 500;
     var desktopHeight = 252;
     var isPlaceholder = false;
@@ -49,9 +50,15 @@ $(function(){
         }
       });
     }
+    function bindMobile() {
+      $mobileBtn.click(function(){
+        $header.toggleClass('open');
+      });
+    }
 
     function init(){
       watchTop();
+      bindMobile();
     }
 
     return {

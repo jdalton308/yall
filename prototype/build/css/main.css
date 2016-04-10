@@ -804,16 +804,28 @@ p, footer .footer-body .footer-col .footer-title {
       font-size: 1.2rem; } }
 
 blockquote {
+  position: relative;
   font-size: 1.6rem;
   font-weight: 200;
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
   line-height: 1.3em; }
+  blockquote:before {
+    content: '“';
+    position: absolute;
+    top: 0;
+    left: -0.4em; }
+  blockquote:after {
+    content: '”'; }
   @media (min-width: 768px) {
     blockquote {
       font-size: 2.25rem; } }
 
 span.quote {
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
+
+::selection {
+  color: #18223d;
+  background: #bd9b37; }
 
 @font-face {
   font-family: 'yall-icons';
@@ -882,6 +894,12 @@ body {
   padding: 0;
   width: 100%;
   min-height: 100%; }
+
+body {
+  padding-top: 58px; }
+  @media (min-width: 768px) {
+    body {
+      padding-top: 0; } }
 
 main {
   max-width: 1400px;
@@ -1009,93 +1027,147 @@ input[type="number"] {
   border: 1px solid #d6d4d5; }
 
 header {
-  padding-top: 70px;
-  margin-bottom: 40px;
-  text-align: center;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFF;
+  padding: 10px 20px;
+  text-align: left;
   -webkit-transition: all 0.5s;
-  transition: all 0.5s; }
+  transition: all 0.5s;
+  box-shadow: 0 0 15px #f1f1f1; }
+  @media (min-width: 768px) {
+    header {
+      position: static;
+      padding: 70px 0 0;
+      margin-bottom: 40px;
+      text-align: center;
+      box-shadow: none; } }
   header .icon-logo {
-    display: inline-block;
-    margin-bottom: 20px; }
+    display: inline-block; }
     header .icon-logo:before {
-      font-size: 60px;
-      color: #bd9b37;
-      -webkit-transition: all 0.5s;
-      transition: all 0.5s; }
+      font-size: 30px;
+      color: #bd9b37; }
     header .icon-logo:hover {
       border: none;
       color: #bd9b37; }
     @media (min-width: 768px) {
       header .icon-logo {
+        margin-bottom: 20px;
         border-bottom: none; }
+        header .icon-logo:before {
+          font-size: 60px;
+          -webkit-transition: all 0.5s;
+          transition: all 0.5s; }
         header .icon-logo:hover {
           border-bottom: none; }
           header .icon-logo:hover:before {
             color: #000; } }
+  header .mobile-btn {
+    display: inline-block;
+    float: right;
+    padding: 10px;
+    width: 50px; }
+    header .mobile-btn .bar {
+      display: block;
+      width: 100%;
+      height: 5px;
+      margin-bottom: 8px;
+      background-color: #bd9b37; }
+      header .mobile-btn .bar:last-child {
+        margin: 0; }
+    @media (min-width: 768px) {
+      header .mobile-btn {
+        display: none; } }
+  header.open nav {
+    z-index: 10;
+    bottom: 0;
+    opacity: 1; }
+  header.open .mobile-btn {
+    position: relative;
+    z-index: 11; }
   header nav {
-    width: 100%; }
+    position: fixed;
+    left: 0;
+    bottom: 110%;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    padding-top: 50px;
+    text-align: center;
+    background-color: #FFF;
+    -webkit-transition: opacity 1s, bottom 1s;
+    transition: opacity 1s, bottom 1s; }
     header nav .nav-item {
-      display: inline-block;
-      padding: 6px 15px 5px;
+      display: block;
+      padding: 2vh 20px 3vh;
       color: #18223d;
       font-weight: 500;
-      font-size: 0.75rem; }
+      font-size: 6vh; }
       header nav .nav-item.current {
         color: #bd9b37; }
       header nav .nav-item.disabled {
         color: #AAA;
         pointer-events: none; }
     @media (min-width: 768px) {
-      header nav .nav-item {
-        position: relative;
-        overflow: hidden;
-        padding: 7px 0 5px;
-        margin: 0 15px;
-        border: none; }
-        header nav .nav-item:before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: -100%;
+      header nav {
+        width: 100%; }
+        header nav .nav-item {
           display: inline-block;
-          height: 1px;
-          width: 100%;
-          background-color: #bd9b37;
-          -webkit-transition: all 0.7s;
-          transition: all 0.7s; }
-        header nav .nav-item:hover:before {
-          left: 0; } }
+          position: relative;
+          overflow: hidden;
+          padding: 7px 0 5px;
+          margin: 0 15px;
+          font-weight: 500;
+          font-size: 0.75rem;
+          border: none; }
+          header nav .nav-item:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            display: inline-block;
+            height: 1px;
+            width: 100%;
+            background-color: #bd9b37;
+            -webkit-transition: all 0.7s;
+            transition: all 0.7s; }
+          header nav .nav-item:hover:before {
+            left: 0; } }
   header .social-links {
     display: none; }
-  .sticky {
-    padding-top: 195px; }
-  .sticky header {
-    position: fixed;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 33px 30px 30px;
-    text-align: center;
-    background-color: #FFF;
-    box-shadow: 0 0 15px #f1f1f1; }
-    .sticky header .icon-logo {
-      float: left;
-      margin: 0; }
-      .sticky header .icon-logo:before {
-        font-size: 30px;
-        color: #bd9b37; }
-    .sticky header nav {
-      display: inline-block;
-      width: auto; }
-      .sticky header nav .nav-item {
-        padding: 5px 0;
-        margin: 0 20px; }
-    .sticky header .social-links {
-      display: inline-block;
-      float: right; }
-      .sticky header .social-links a {
-        display: inline-block; }
+  @media (min-width: 768px) {
+    .sticky {
+      padding-top: 195px; }
+    .sticky header {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 33px 30px 30px;
+      text-align: center;
+      background-color: #FFF;
+      box-shadow: 0 0 15px #f1f1f1; }
+      .sticky header .icon-logo {
+        float: left;
+        margin: 0; }
+        .sticky header .icon-logo:before {
+          font-size: 30px;
+          color: #bd9b37; }
+      .sticky header nav {
+        display: inline-block;
+        width: auto; }
+        .sticky header nav .nav-item {
+          padding: 5px 0;
+          margin: 0 20px; }
+      .sticky header .social-links {
+        display: inline-block;
+        float: right; }
+        .sticky header .social-links a {
+          display: inline-block; } }
 
 footer {
   width: 100%;
