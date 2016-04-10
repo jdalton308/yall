@@ -37,12 +37,13 @@ figure {
 .quote-callout {
   width: 80%;
   min-width: 300px;
-  margin: 0 auto 60px;
+  margin: 130px auto;
   text-align: center;
 
   .quote-title {
     margin-bottom: 10px;
-    font-size: 1.25rem; // 20px;
+    font-size: 1rem; // 20px;
+    font-weight: 500;
     letter-spacing: 2px;
     color: $gold;
   }
@@ -58,14 +59,17 @@ figure {
 .come-back-section {
   max-width: 660px;
   margin: 0 auto;
-  padding: 0 20px 100px;
+  padding: 20px 20px 100px;
   text-align: center;
 
   h2 {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  h4 {
+    letter-spacing: 1px;
   }
   .social-links {
-    margin-top: 25px;
+    margin-top: 35px;
     text-align: center;
   }
 
@@ -74,14 +78,14 @@ figure {
 
     h2 {
       font-size: 2.25rem; // 45px;
-      // margin-bottom: 20px;
+      margin-bottom: 25px;
     }
     h4 {
       font-size: 1.2rem; // 24px
       font-weight: 400;
     }
     .social-links {
-      margin-top: 20px;
+      margin-top: 40px;
     }
   }
 }

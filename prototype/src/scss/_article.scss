@@ -112,10 +112,19 @@
     font-size: 1rem;
 
     &.intro {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
   }
   > p {
+    &.first-line {
+      &:first-line {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        font-variant: small-caps;
+        line-height: 1.8em;
+      }
+    }
     &:last-child {
 
       &:after {
@@ -228,7 +237,18 @@
   }
   blockquote {
     display: block;
+    position: relative;
     // @include tenWideCenter();
+
+    &:before {
+      content: '“';
+      position: absolute;
+      top: 0;
+      left: -0.4em;
+    }
+    &:after {
+      content: '”';
+    }
 
     @media (min-width: $mobile) {
       display: inline-block;

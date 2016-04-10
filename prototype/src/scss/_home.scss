@@ -105,6 +105,14 @@
         }
 
         &.portrait {
+          .float-cont {
+            width: 50%;
+            max-width: 340px;
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
           &:nth-child(odd) {
             .float-cont {
               margin-right: 20%;
@@ -126,6 +134,14 @@
         }
 
         &.landscape {
+          .float-cont {
+            width: 50%;
+            max-width: 580px;
+          }
+          img {
+            width: 100%;
+            height: auto;
+          }
           &:nth-child(odd) {
             .float-cont {
               position: static;
@@ -151,9 +167,12 @@
     display: block;
     position: relative;
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
     color: $text-color;
 
+    .img-container {
+      display: block;
+    }
     img {
       display: block;
       width: 100%;
@@ -164,7 +183,7 @@
       text-align: left;
 
       .item-type {
-        margin-bottom: 3px;
+        margin-bottom: 7px;
 
         .divider {
           display: inline-block;
@@ -179,16 +198,26 @@
           line-height: 1em;
           letter-spacing: 0;
         }
+        @media (max-width: $mobile) {
+          font-size: 0.8rem;
+        }
       }
       .item-title {
+        display: block;
+        @extend h2;
         margin-bottom: 0;
+        color: $text-color;
+
+        @media (max-width: $mobile) {
+          line-height: 1.2em;
+        }
       }
       .item-author {
-        margin-bottom: 7px;
+        margin-bottom: 13px;
       }
       .item-route {
         position: relative;
-        padding: 8px 0 0;
+        padding: 5px 0 0;
 
         &:before {
           content: '';
@@ -199,6 +228,9 @@
           width: 60px;
           height: 2px;
           background-color: $text-color;
+        }
+        @media (min-width: $mobile) {
+          padding: 8px 0 0;
         }
       }
     }
@@ -218,24 +250,68 @@
         clear: both;
       }
 
-      &:hover {
-        color: $gold;
+      .float-cont {
+        position: relative;
       }
-
-      img {
+      .img-container {
         display: inline-block;
+        border: none;
+
+        &:hover {
+          border: none;
+
+          & + .item-copy {
+            .item-title {
+              color: $gold;
+
+              &:after {
+                right: 0;
+              }
+            }
+          }
+        }
+      }
+      img {
+        display: block;
         margin-bottom: 0;
+        // dimensions defined above, in portait/landscape
       }
       .item-copy {
         padding: 0;
         display: inline-block;
         text-align: left;
+        pointer-events: none;
 
         .item-type {
           margin-bottom: 38px;
         }
         .item-title {
-          // margin-bottom: 10px;
+          display: inline-block;
+          position: relative;
+          overflow: hidden;
+          @include transition(0.6s);
+          pointer-events: auto;
+          border: none;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 100%;
+            display: inline-block;
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            @include transition(0.8s);
+          }
+          &:hover {
+            border: none;
+            color: $gold;
+
+            &:after {
+              right: 0;
+            }
+          }
         }
         .item-author {
           margin-bottom: 43px;
@@ -251,14 +327,6 @@
         }
       }
 
-      .float-cont {
-        position: relative;
-      }
-      img {
-        display: block;
-        height: 520px;
-        width: auto;
-      }
       .item-copy {
         @include yCenter();
         z-index: 2;
@@ -270,10 +338,13 @@
         margin-bottom: 190px;
         text-align: right;
 
-        img {
-          display: inline-block;
-          height: auto;
+        .img-container {
           width: 83.33%;
+          display: inline-block;
+        }
+        img {
+          display: block;
+          width: 100%;
         }
         .item-copy {
           left: 8.33%; // 1/12th
