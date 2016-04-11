@@ -173,9 +173,8 @@
       }
     }
   }
-  .far-right-img {
+  figure {
     display: block;
-    width: 100%;
     margin: 35px 0;
 
     img {
@@ -185,7 +184,11 @@
     }
     figcaption {
       font-size: 12px;
+      font-family: $whitneyFonts;
+      font-weight: 500;
     }
+  }
+  .far-right-img {
 
     @media (min-width: $mobile) {
       float: right;
@@ -197,35 +200,12 @@
       padding-top: 9px;
     }
   }
-  .image-with-caption {
-    display: block;
-    // @include tenWideCenter();
-    margin: 35px 0;
-    
-    img {
-      display: block;
-      width: 100%;
-      margin-bottom: 5px;
-    }
-    figcaption {
-      font-size: 12px;
-    }
-  }
   .full-width-image {
-    display: block;
-    width: 100%;
-    margin: 35px 0;
 
     img {
       position: relative;
-      left: -10%;
-      display: block;
-      width: 120%;
-      margin-bottom: 5px;
-    }
-    figcaption {
-      // @include tenWideCenter();
-      font-size: 12px;
+      left: -20px;
+      width: calc(100% + 40px);
     }
 
     @media (min-width: $mobile) {

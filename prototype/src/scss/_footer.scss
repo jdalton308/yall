@@ -56,6 +56,11 @@ footer {
         font-family: $chronicleFonts;
         font-weight: 700;
         margin-bottom: 10px;
+
+        &:hover {
+          border-color: transparent;
+          color: $gold;
+        }
       }
       p,
       a {

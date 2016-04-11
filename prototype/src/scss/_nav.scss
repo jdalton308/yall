@@ -60,6 +60,7 @@ header {
     float: right;
     padding: 2px 5px 5px;
     width: 50px;
+    @include transition();
 
     .bar {
       display: block;
@@ -87,6 +88,10 @@ header {
     .icon-logo {
       position: relative;
       z-index: 11;
+    }
+    .mobile-btn {
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
     }
   }
   nav {

@@ -62,6 +62,7 @@
   .about-content-section {
     p {
       margin-bottom: 15px;
+      font-family: $chronicleFonts;
     }
     .credit-col,
     .in-touch-col {
@@ -84,8 +85,8 @@
       .credits {
         margin: 30px 0;
       }
-      .requests {
-
+      .come-back-section {
+        padding-bottom: 20px;
       }
     }
     .in-touch-col {
@@ -111,6 +112,9 @@
 
         .credits {
           margin: 50px 0;
+        }
+        .come-back-section {
+          // padding-bottom: 20px;
         }
       }
       .in-touch-col {
