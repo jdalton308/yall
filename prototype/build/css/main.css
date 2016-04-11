@@ -872,6 +872,8 @@ span.quote {
   .gold-icon:before {
     font-size: 16px;
     color: #FFF; }
+  .gold-icon:first-child {
+    margin-left: 0; }
   @media (min-width: 768px) {
     .gold-icon:hover {
       background-color: #000; } }
