@@ -94,14 +94,11 @@ footer {
 
     @media (min-width: $mobile) {
       width: 90%;
-      max-width: 933px;
+      max-width: 1166px;
       padding: 55px 0;
       margin: 0 auto;
       text-align: center;
 
-      @at-root #home & {
-        max-width: 1166px;
-      }
 
       .footer-col {
         display: inline-block;

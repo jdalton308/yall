@@ -755,6 +755,10 @@ header nav .nav-item {
 h5 {
   font-size: 1rem;
   letter-spacing: 0.5px; }
+  h5.question {
+    font-size: 1.2rem;
+    line-height: 1.5em;
+    margin: 30px 0 5px; }
   @media (min-width: 768px) {
     h5 {
       font-size: 1.2rem; }
@@ -1065,7 +1069,7 @@ header {
   width: 100%;
   background-color: #FFF;
   padding: 14px 20px 9px;
-  text-align: left;
+  text-align: center;
   box-shadow: 0 0 15px #f1f1f1; }
   @media (min-width: 768px) {
     header {
@@ -1097,35 +1101,13 @@ header {
           border-bottom: none; }
           header .icon-logo:hover:before {
             color: #000; } }
-  header .mobile-btn {
-    display: inline-block;
-    float: right;
-    padding: 2px 5px 5px;
-    width: 50px;
-    -webkit-transition: all 0.5s;
-    transition: all 0.5s; }
-    header .mobile-btn .bar {
-      display: block;
-      width: 100%;
-      height: 3px;
-      margin-bottom: 7px;
-      background-color: #bd9b37; }
-      header .mobile-btn .bar:last-child {
-        margin: 0; }
-    @media (min-width: 768px) {
-      header .mobile-btn {
-        display: none; } }
   header.open nav {
     z-index: 10;
     bottom: 0;
     opacity: 1; }
-  header.open .mobile-btn,
   header.open .icon-logo {
     position: relative;
     z-index: 11; }
-  header.open .mobile-btn {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg); }
   header nav {
     position: fixed;
     left: 0;
@@ -1133,11 +1115,11 @@ header {
     width: 100%;
     height: 100vh;
     opacity: 0;
-    padding-top: 25vh;
+    padding-top: 22vh;
     text-align: center;
     background-color: #FFF;
-    -webkit-transition: opacity 1s, bottom 0.8s ease-out;
-    transition: opacity 1s, bottom 0.8s ease-out; }
+    -webkit-transition: opacity 1.6s, bottom 1.6s cubic-bezier(0.25, 0.25, 0.08, 0.95);
+    transition: opacity 1.6s, bottom 1.6s cubic-bezier(0.25, 0.25, 0.08, 0.95); }
     header nav .nav-item {
       display: block;
       padding: 2vh 20px 3vh;
@@ -1167,6 +1149,8 @@ header {
           font-weight: 500;
           font-size: 0.75rem;
           border: none; }
+          header nav .nav-item.home-item {
+            display: none; }
           header nav .nav-item:before {
             content: '';
             position: absolute;
@@ -1281,12 +1265,10 @@ footer {
     @media (min-width: 768px) {
       footer .footer-body {
         width: 90%;
-        max-width: 933px;
+        max-width: 1166px;
         padding: 55px 0;
         margin: 0 auto;
         text-align: center; }
-        #home footer .footer-body {
-          max-width: 1166px; }
         footer .footer-body .footer-col {
           display: inline-block;
           vertical-align: top;
@@ -1410,12 +1392,12 @@ footer {
   #home .feature-item img {
     display: block;
     width: 100%;
-    margin-bottom: 10px; }
+    margin-bottom: 40px; }
   #home .feature-item .item-copy {
     padding: 0 20px;
     text-align: left; }
     #home .feature-item .item-copy .item-type {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-weight: 700; }
       #home .feature-item .item-copy .item-type .divider {
         display: inline-block;
@@ -1439,7 +1421,7 @@ footer {
         #home .feature-item .item-copy .item-title {
           line-height: 1.2em; } }
     #home .feature-item .item-copy .item-author {
-      margin-bottom: 17px; }
+      margin-bottom: 27px; }
     #home .feature-item .item-copy .item-route {
       position: relative;
       padding: 5px 0 0; }
@@ -1634,10 +1616,7 @@ footer {
       font-size: 1rem; }
   .article-section > p.first-line:first-line {
     font-weight: 700;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    font-variant: small-caps;
-    line-height: 1.8em; }
+    text-transform: uppercase; }
   .article-section > p:last-child:after {
     font-family: 'yall-icons';
     content: "";
@@ -1655,7 +1634,8 @@ footer {
     text-align: center; }
   .article-section img.left-img, .article-section img.right-img {
     display: block;
-    width: 100%; }
+    width: 100%;
+    margin-bottom: 15px; }
   @media (min-width: 768px) {
     .article-section img.left-img, .article-section img.right-img {
       display: inline-block;
@@ -1698,7 +1678,8 @@ footer {
       width: 150%; } }
   .article-section blockquote {
     display: block;
-    position: relative; }
+    position: relative;
+    margin: 25px 0; }
     .article-section blockquote:before {
       content: '“';
       position: absolute;

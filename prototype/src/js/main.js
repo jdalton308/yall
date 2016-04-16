@@ -15,7 +15,8 @@ $(function(){
   var header = (function(){
 
     var $header = $('header');
-    var $mobileBtn = $header.find('.mobile-btn');
+    var $mobileBtn = $header.find('.icon-logo');
+    var $navLinks = $header.find('.nav-item');
 
     var headerHeight = $header.height() * 2;
     var showHeight = $window.height();
@@ -32,8 +33,20 @@ $(function(){
       });
     }
     function bindMobile() {
-      $mobileBtn.click(function(){
+      $mobileBtn.click(function(e){
+        e.preventDefault();
         $header.toggleClass('open');
+      });
+    }
+    function setCurrentPage() {
+      var path = window.location.pathname;
+
+      $navLinks.each(function(i){
+        var $this = $(this);
+        var thisTarget = $this.attr('href');
+        if (thisTarget === path) {
+          $this.addClass('current');
+        }
       });
     }
 
@@ -45,6 +58,7 @@ $(function(){
         watchTop();
       }
 
+      setCurrentPage();
     }
 
     return {

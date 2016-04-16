@@ -10,7 +10,7 @@ header {
   width: 100%;
   background-color: $white;
   padding: 14px 20px 9px;
-  text-align: left;
+  text-align: center;
   // @include transition();
   box-shadow: 0 0 15px #f1f1f1;
 
@@ -55,43 +55,15 @@ header {
       }
     }
   }
-  .mobile-btn {
-    display: inline-block;
-    float: right;
-    padding: 2px 5px 5px;
-    width: 50px;
-    @include transition();
-
-    .bar {
-      display: block;
-      width: 100%;
-      height: 3px;
-      margin-bottom: 7px;
-      background-color: $gold;
-
-      &:last-child {
-        margin: 0;
-      }
-    }
-
-    @media (min-width: $mobile) {
-      display: none;
-    }
-  }
   &.open {
     nav {
       z-index: 10;
       bottom: 0;
       opacity: 1;
     }
-    .mobile-btn,
     .icon-logo {
       position: relative;
       z-index: 11;
-    }
-    .mobile-btn {
-      -webkit-transform: rotate(90deg);
-      transform: rotate(90deg);
     }
   }
   nav {
@@ -101,12 +73,12 @@ header {
     width: 100%;
     height: 100vh;
     opacity: 0;
-    padding-top: 25vh;
+    padding-top: 22vh;
 
     text-align: center;
     background-color: $white;
-    -webkit-transition: opacity 1s, bottom 0.8s ease-out;
-    transition: opacity 1s, bottom 0.8s ease-out;
+    -webkit-transition: opacity 1.6s, bottom 1.6s cubic-bezier(.25,.25,.08,.95);
+    transition: opacity 1.6s, bottom 1.6s cubic-bezier(.25,.25,.08,.95);
 
     .nav-item {
       display: block;
@@ -144,6 +116,10 @@ header {
         font-weight: 500;
         font-size: 0.75rem;
         border: none;
+
+        &.home-item {
+          display: none;
+        }
         
         &:before {
           content: '';
