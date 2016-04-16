@@ -6,7 +6,8 @@
     line-height: 1.5em;
   }
   .quote-callout {
-    padding-top: 60px;
+    padding-top: 0;
+    margin-top: 80px;
 
     @media (min-width: $mobile) {
       margin: 0 auto;
@@ -18,6 +19,9 @@
     @include tenWideCenter();
   }
   .founder-photo-section {
+    position: relative;
+    overflow: hidden;
+
     figure {
       display: block;
       width: 100%;
@@ -31,6 +35,16 @@
       figcaption {
         display: block;
       }
+    }
+    .photo-credit {
+      position: absolute;
+      right: 10px;
+      bottom: 160px;
+      @include transform(translateX(50%) rotate(-90deg));
+
+      font-size: 12px;
+      font-family: $whitneyFonts;
+      font-weight: 500;
     }
 
     @media (min-width: $mobile) {
@@ -56,6 +70,12 @@
             margin-bottom: 15px;
           }
         }
+      }
+      .photo-credit {
+        position: static;
+        right: auto;
+        bottom: auto;
+        @include transform(none);
       }
     }
   }
@@ -105,7 +125,7 @@
       .in-touch-col {
         display: inline-block;
         vertical-align: top;
-        margin: 70px 0;
+        margin: 70px 0 40px;
       }
       .credit-col {
         width: calc(100% - 250px);

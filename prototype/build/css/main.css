@@ -1766,7 +1766,8 @@ footer {
   line-height: 1.5em; }
 
 #about .quote-callout {
-  padding-top: 60px; }
+  padding-top: 0;
+  margin-top: 80px; }
   @media (min-width: 768px) {
     #about .quote-callout {
       margin: 0 auto;
@@ -1785,33 +1786,52 @@ footer {
       max-width: none;
       margin: 0 auto; } }
 
-#about .founder-photo-section figure {
-  display: block;
-  width: 100%;
-  margin-bottom: 30px; }
-  #about .founder-photo-section figure img {
+#about .founder-photo-section {
+  position: relative;
+  overflow: hidden; }
+  #about .founder-photo-section figure {
     display: block;
     width: 100%;
-    margin-bottom: 5px; }
-  #about .founder-photo-section figure figcaption {
-    display: block; }
-
-@media (min-width: 768px) {
-  #about .founder-photo-section figure {
-    position: relative;
-    display: inline-block;
-    vertical-align: top;
-    width: 48%;
-    margin-bottom: 0; }
-    #about .founder-photo-section figure:first-child {
-      margin-right: 4%;
-      padding-top: 90px; }
-      #about .founder-photo-section figure:first-child figcaption {
-        position: absolute;
-        left: 0;
-        top: 20px; }
-    #about .founder-photo-section figure:last-child img {
-      margin-bottom: 15px; } }
+    margin-bottom: 30px; }
+    #about .founder-photo-section figure img {
+      display: block;
+      width: 100%;
+      margin-bottom: 5px; }
+    #about .founder-photo-section figure figcaption {
+      display: block; }
+  #about .founder-photo-section .photo-credit {
+    position: absolute;
+    right: 10px;
+    bottom: 160px;
+    -ms-transform: translateX(50%) rotate(-90deg);
+    -webkit-transform: translateX(50%) rotate(-90deg);
+    transform: translateX(50%) rotate(-90deg);
+    font-size: 12px;
+    font-family: "Whitney A", "Whitney B", arial, sans-serif;
+    font-weight: 500; }
+  @media (min-width: 768px) {
+    #about .founder-photo-section figure {
+      position: relative;
+      display: inline-block;
+      vertical-align: top;
+      width: 48%;
+      margin-bottom: 0; }
+      #about .founder-photo-section figure:first-child {
+        margin-right: 4%;
+        padding-top: 90px; }
+        #about .founder-photo-section figure:first-child figcaption {
+          position: absolute;
+          left: 0;
+          top: 20px; }
+      #about .founder-photo-section figure:last-child img {
+        margin-bottom: 15px; }
+    #about .founder-photo-section .photo-credit {
+      position: static;
+      right: auto;
+      bottom: auto;
+      -ms-transform: none;
+      -webkit-transform: none;
+      transform: none; } }
 
 #about .about-content-section p {
   margin-bottom: 15px;
@@ -1850,7 +1870,7 @@ footer {
   #about .about-content-section .in-touch-col {
     display: inline-block;
     vertical-align: top;
-    margin: 70px 0; }
+    margin: 70px 0 40px; }
   #about .about-content-section .credit-col {
     width: calc(100% - 250px); }
     #about .about-content-section .credit-col .credits {
