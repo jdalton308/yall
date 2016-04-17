@@ -43,7 +43,7 @@ gulp.task('html', function(){
       basepath: './src/html/'
     }))
 		.pipe(htmlMin({
-			collapseWhitespace: true
+			collapseWhitespace: false
 		}))
 		.pipe(gulp.dest('./build/'))
 });

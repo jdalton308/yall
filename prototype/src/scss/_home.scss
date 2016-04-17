@@ -2,7 +2,7 @@
 // HOME
 // ---------------
 
-#home {
+.home {
 
   main {
     position: relative;
@@ -16,10 +16,12 @@
     color: $offWhite;
     font-family: $whitneyFonts;
     font-weight: 700;
-    @include transition();
+    // transition: opacity 1s, transform 1.3s;
+    @include transition(1.5s);
 
     &.hide {
       opacity: 0;
+      @include transform( translateY(-70px) );
     }
 
     &.letter-1 {

@@ -58,7 +58,7 @@ $(function(){
         watchTop();
       }
 
-      setCurrentPage();
+      // setCurrentPage();
     }
 
     return {
