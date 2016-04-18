@@ -1798,7 +1798,7 @@ footer {
       position: relative;
       display: inline-block;
       vertical-align: top;
-      width: 48%;
+      width: 47%;
       margin-bottom: 0; }
       .about .founder-photo-section figure:first-child {
         margin-right: 4%;
@@ -1856,7 +1856,7 @@ footer {
     vertical-align: top;
     margin: 70px 0 40px; }
   .about .about-content-section .credit-col {
-    width: calc(100% - 250px); }
+    width: calc(100% - 255px); }
     .about .about-content-section .credit-col .credits {
       margin: 50px 0; }
   .about .about-content-section .in-touch-col {
