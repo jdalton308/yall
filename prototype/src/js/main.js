@@ -16,7 +16,7 @@ $(function(){
 
     var $header = $('header');
     var $mobileBtn = $header.find('.icon-logo');
-    var $navLinks = $header.find('.nav-item');
+    var $navLinks = $header.find('.menu-item');
 
     var headerHeight = $header.height() * 2;
     var showHeight = $window.height();
@@ -45,7 +45,7 @@ $(function(){
         var $this = $(this);
         var thisTarget = $this.attr('href');
         if (thisTarget === path) {
-          $this.addClass('current');
+          $this.addClass('current-menu-item');
         }
       });
     }
@@ -58,7 +58,7 @@ $(function(){
         watchTop();
       }
 
-      // setCurrentPage();
+      setCurrentPage();
     }
 
     return {

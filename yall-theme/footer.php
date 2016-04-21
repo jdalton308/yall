@@ -21,44 +21,20 @@
       </div>
       <div class="footer-col">
         <div class="footer-title">States</div>
-        <div class="footer-list">
-          <div class="list-item">
-            <a href="#" class="disabled">Alabama</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Arkansas</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Florida</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Georgia</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Kentucky</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Lousiana</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Mississippi</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">North Carolina</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">South Carolina</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Tennessee</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Texas</a>
-          </div>
-          <div class="list-item">
-            <a href="#" class="disabled">Virginia</a>
-          </div>
-        </div>
+
+        <?php
+          $tags = get_tags();
+          $html = '<div class="footer-list post_tags">';
+          foreach ( $tags as $tag ) {
+            $tag_link = get_tag_link( $tag->term_id );
+                
+            $html .= "<a href='{$tag_link}' class='{$tag->slug} list-item'>";
+            $html .= "{$tag->name}</a>";
+          }
+          $html .= '</div>';
+          echo $html;
+        ?>
+
       </div>
       <div class="footer-col">
         <div class="footer-title">Stay in Touch</div>

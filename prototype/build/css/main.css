@@ -827,7 +827,7 @@ span.quote {
 
 @font-face {
   font-family: 'yall-icons';
-  src: url("assets/fonts/yall-icons.ttf?dsbgji") format("truetype"), url("assets/fonts/yall-icons.woff?dsbgji") format("woff"), url("assets/fonts/yall-icons.svg?dsbgji#yall-icons") format("svg");
+  src: url("/assets/fonts/yall-icons.ttf?dsbgji") format("truetype"), url("/assets/fonts/yall-icons.woff?dsbgji") format("woff"), url("/assets/fonts/yall-icons.svg?dsbgji#yall-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -1466,8 +1466,7 @@ footer {
       .home .feature-item .item-copy {
         padding: 0;
         display: inline-block;
-        text-align: left;
-        pointer-events: none; }
+        text-align: left; }
         .home .feature-item .item-copy .item-type {
           margin-bottom: 38px;
           font-size: 1rem; }
@@ -1477,7 +1476,6 @@ footer {
           overflow: hidden;
           -webkit-transition: all 0.6s;
           transition: all 0.6s;
-          pointer-events: auto;
           border: none; }
           .home .feature-item .item-copy .item-title:hover {
             border: none;
@@ -1507,7 +1505,8 @@ footer {
           display: inline-block; }
         .home .feature-item.hero img {
           display: block;
-          width: 100%; }
+          width: 100%;
+          height: auto; }
         .home .feature-item.hero .item-copy {
           left: 8.33%; } }
 

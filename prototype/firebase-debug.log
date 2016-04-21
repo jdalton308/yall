@@ -1,0 +1,8 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] Platform:     darwin
+[debug] Node Version: v5.6.0
+[debug] Time:         Sun Apr 17 2016 22:59:01 GMT-0700 (PDT)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/firebase/yall-collective/token?token=XXX 

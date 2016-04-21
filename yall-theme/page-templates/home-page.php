@@ -38,10 +38,14 @@ get_header(); ?>
 
 
 <!-- Get the lastest post: -->
-<?php query_posts('showposts=1'); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php
+  $the_query = new WP_Query(); 
 
-  <?php $id = get_the_ID(); ?>
+  if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+  <?php $id = get_the_ID(); 
+    echo $current_post;
+  ?>
 
   <div class="hero feature-item">
     <a href="<?php the_permalink() ?>" class="img-container">
@@ -60,6 +64,7 @@ get_header(); ?>
 
   </div>
 
+<?php wp_reset_postdata(); ?>
 <?php endwhile; endif; ?>
 
 
@@ -72,6 +77,9 @@ get_header(); ?>
 
 
   <div class="featured-items">
+
+
+
 
     <div class="feature-item portrait">
       <div class="float-cont">
@@ -104,7 +112,7 @@ get_header(); ?>
   </div>
 
 
-  <section class="come-back-section">
+ <!--  <section class="come-back-section">
     <h2>Come back to <em>Y<span class="quote">&rsquo;</span>all Collective</em> in a few weeks to see more stories.</h2>
     <h4>Know someone we should interview?</h4>
     <h4>Tag <a href="//www.instagram.com/yallcollective" target="_blank">@yallcollective</a> on Instagram.</h4>
@@ -114,7 +122,24 @@ get_header(); ?>
       <a href="https://www.twitter.com/yallcollective" class="icon-twitter gold-icon" target="_blank"></a>
       <a href="https://www.pinterest.com/yallcollective" class="icon-pinterest gold-icon" target="_blank"></a>
     </div>
-  </section>
+  </section> -->
+
+    <section class="more-section">
+      <h3><span class="italic">More from</span> Y'all Collective</h3>
+      <div class="more-grid">
+
+        <div class="more-item">
+          <img src="/assets/img/michael.jpg" alt="">
+          <div class="item-copy">
+            <h4 class="item-type">Q&amp;A<span class="divider">|</span><p class="date">06.06.13</p></h4>
+            <h2 class="item-title">Michael George</h2>
+            <h3 class="item-author">Photographer</h3>
+            <h5 class="item-route">South Carolina > Brooklyn</h5>
+          </div>
+        </div>
+
+      </div>
+    </section>
     
 
 </main>
