@@ -28,8 +28,9 @@
           foreach ( $tags as $tag ) {
             $tag_link = get_tag_link( $tag->term_id );
                 
-            $html .= "<a href='{$tag_link}' class='{$tag->slug} list-item'>";
-            $html .= "{$tag->name}</a>";
+            $html .= "<div class='list-item'>";
+            $html .= "<a href='{$tag_link}' class='{$tag->slug}'>{$tag->name}</a>";
+            $html .= "</div>";
           }
           $html .= '</div>';
           echo $html;

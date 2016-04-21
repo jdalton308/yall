@@ -24,7 +24,7 @@ get_header(); ?>
   <div class="back-letter letter-14">E</div>
 
 
-  <div class="hero feature-item essay">
+<!--   <div class="hero feature-item essay">
     <a href="/deenie-hartzog-mislock.html" class="img-container">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Deenie-LB-5494@2x.jpg" alt="#" class="item-image">
     </a>
@@ -34,54 +34,89 @@ get_header(); ?>
       <h3 class="item-author">Deenie Hartzog-Mislock</h3>
       <h5 class="item-route">Mississippi <span class="icon-feather-arrow"></span> Brooklyn</h5>
     </div>
-  </div>
+  </div> -->
 
 
 <!-- Get the lastest post: -->
 <?php
-  $the_query = new WP_Query(); 
+  $args1 = array(
+    'posts_per_page' => 5,
+  );
+  $the_query = new WP_Query($args1); 
 
   if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-  <?php $id = get_the_ID(); 
-    echo $current_post;
-  ?>
+  <?php $id = get_the_ID(); ?>
+  <?php $index = $the_query->current_post; ?>
+  <?php $isLastPost = ($index + 1 < $wp_query->post_count); ?>
+  <?php $isPortrait = ( get_post_meta( $id, 'Portrait', true) == 'true' ); ?>
 
-  <div class="hero feature-item">
-    <a href="<?php the_permalink() ?>" class="img-container">
-      <?php if ( has_post_thumbnail() ) {
-          the_post_thumbnail();
-      } ?>
-    </a>
-    <div class="item-copy">
-      <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('F jS, Y') ?></p></h4>
+  <?php if ($index < 4) : ?>
+    <div class="feature-item <?php if ( $index == 0 ) { echo 'hero';} elseif ( $isPortrait) { echo 'portrait'; } else { echo 'landscape'; }?>">
+      <?php if ( $index > 0 ) { echo '<div class="float-cont">';} ?>
 
-      <a href="<?php the_permalink() ?>" class="item-title"><?php the_title(); ?></a>
-      <h3 class="item-author"><?php echo get_post_meta( $id, 'Subtitle', true); ?></h3>
+        <a href="<?php the_permalink() ?>" class="img-container">
+          <?php if ( has_post_thumbnail() ) {
+              the_post_thumbnail();
+          } ?>
+        </a>
+        <div class="item-copy">
+          <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('F jS, Y') ?></p></h4>
+          <a href="<?php the_permalink() ?>" class="item-title"><?php the_title(); ?></a>
+          <h3 class="item-author"><?php echo get_post_meta( $id, 'Subtitle', true); ?></h3>
+          <h5 class="item-route"><?php echo get_post_meta( $id, 'Start', true); ?> <span class="icon-feather-arrow"></span> <?php echo get_post_meta( $id, 'End', true); ?></h5>
+        </div>
 
-      <h5 class="item-route"><?php echo get_post_meta( $id, 'Start', true); ?> <span class="icon-feather-arrow"></span> <?php echo get_post_meta( $id, 'End', true); ?></h5>
+      <?php if ( $index > 0 ) { echo '</div>';} ?>
     </div>
 
-  </div>
 
-<?php wp_reset_postdata(); ?>
+    <?php if ( $index == 0 ) : ?>
+      <section class="quote-callout">
+        <h5 class="quote-title">Y<span class="quote">&rsquo;</span>ALL COLLECTIVE</h5>
+        <blockquote>Tellin’ the stories of creative New Yorkers with Southern roots—how they live, what they make, &amp; why they’re here.</blockquote>
+      </section>
+
+      <div class="featured-items">
+    <?php endif; ?>
+
+  <?php else : ?>
+
+    <?php if ( $index == 4 ) : ?>
+      <section class="more-section">
+        <h3><span class="italic">More from</span> Y'all Collective</h3>
+        <div class="more-grid">
+    <?php endif; ?>
+
+    <div class="more-item">
+
+      <a href="<?php the_permalink() ?>" class="img-container">
+        <?php if ( has_post_thumbnail() ) {
+            the_post_thumbnail();
+        } ?>
+      </a>
+      <div class="item-copy">
+        <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('F jS, Y') ?></p></h4>
+        <a href="<?php the_permalink() ?>" class="item-title"><?php the_title(); ?></a>
+        <h3 class="item-author"><?php echo get_post_meta( $id, 'Subtitle', true); ?></h3>
+        <h5 class="item-route"><?php echo get_post_meta( $id, 'Start', true); ?> <span class="icon-feather-arrow"></span> <?php echo get_post_meta( $id, 'End', true); ?></h5>
+      </div>
+    </div>
+
+    <?php if ( $isLastPost ) : ?>
+        </div>
+      </section>
+    <?php endif; ?>
+
+  <?php endif; ?>
+
 <?php endwhile; endif; ?>
 
+    
+    </div>
 
 
-
-  <section class="quote-callout">
-    <h5 class="quote-title">Y<span class="quote">&rsquo;</span>ALL COLLECTIVE</h5>
-    <blockquote>Tellin’ the stories of creative New Yorkers with Southern roots—how they live, what they make, &amp; why they’re here.</blockquote>
-  </section>
-
-
-  <div class="featured-items">
-
-
-
-
-    <div class="feature-item portrait">
+<!--     <div class="feature-item portrait">
       <div class="float-cont">
         <a href="/kirby-brown.html" class="img-container">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/KB-WEB-9680@2x.jpg" alt="#" class="item-image">
@@ -109,7 +144,7 @@ get_header(); ?>
       </div>
     </div>
 
-  </div>
+  </div> -->
 
 
  <!--  <section class="come-back-section">
@@ -124,7 +159,7 @@ get_header(); ?>
     </div>
   </section> -->
 
-    <section class="more-section">
+<!--     <section class="more-section">
       <h3><span class="italic">More from</span> Y'all Collective</h3>
       <div class="more-grid">
 
@@ -139,7 +174,7 @@ get_header(); ?>
         </div>
 
       </div>
-    </section>
+    </section> -->
     
 
 </main>
