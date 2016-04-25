@@ -1,0 +1,202 @@
+
+// NAV
+//-----------
+
+header {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  padding: 14px 20px 9px;
+  text-align: center;
+  // @include transition();
+  box-shadow: 0 0 15px #f1f1f1;
+
+  @media (min-width: $mobile) {
+    position: static;
+    top: auto;
+    left: auto;
+    padding: 70px 0 40px;
+    text-align: center;
+    box-shadow: none;
+  }
+
+  .icon-logo {
+    display: inline-block;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+
+    &:before {
+      font-size: 30px;
+      color: $gold;
+    }
+    &:hover {
+      border: none;
+      color: $gold;
+    }
+
+    @media (min-width: $mobile) {
+      margin-bottom: 20px;
+      border-bottom: none;
+
+      &:before {
+        font-size: 60px;
+        @include transition();
+      }
+
+      &:hover {
+        border-bottom: none;
+
+        &:before {
+          color: $black;
+        }
+      }
+    }
+  }
+  &.open {
+    nav {
+      z-index: 10;
+      bottom: 0;
+      opacity: 1;
+    }
+    .icon-logo {
+      position: relative;
+      z-index: 11;
+    }
+  }
+  nav {
+    position: fixed;
+    left: 0;
+    bottom: 110%;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    padding-top: 22vh;
+
+    text-align: center;
+    background-color: $white;
+    -webkit-transition: opacity 1.6s, bottom 1.6s cubic-bezier(.25,.25,.08,.95);
+    transition: opacity 1.6s, bottom 1.6s cubic-bezier(.25,.25,.08,.95);
+
+    .menu-item {
+      display: block;
+      padding: 2vh 20px 3vh;
+      color: $text-color;
+      font-family: $chronicleFonts;
+      font-weight: 200;
+      font-size: 6vh;
+
+      &.current-menu-item {
+        color: $gold;
+      }
+      &.disabled {
+        color: $grey-light;
+        pointer-events: none;
+      }
+    }
+
+    @media (min-width: $mobile) {
+      position: static;
+      width: 100%;
+      height: auto;
+      opacity: 1;
+      padding: 0;
+
+      .menu-item {
+        font-family: $whitneyFonts;
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        padding: 7px 0 5px;
+        margin: 0 15px;
+
+        @extend h6;
+        font-weight: 500;
+        font-size: 0.75rem;
+        border: none;
+
+        &.home-item {
+          display: none;
+        }
+        
+        &:before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -100%;
+          display: inline-block;
+          height: 1px;
+          width: 100%;
+          background-color: $gold;
+          @include transition(0.7s);
+        }
+        &:hover {
+          &:before {
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+  .social-links {
+    display: none;
+  }
+
+  @media (min-width: $mobile) {
+    @at-root .sticky {
+      padding-top: 225px;
+    }
+
+    @at-root .sticky & {
+      position: fixed;
+      z-index: 10;
+      top: -50%;
+      left: 0;
+      width: 100%;
+      padding: 33px 30px 30px;
+      text-align: center;
+      background-color: $white;
+      box-shadow: 0 0 15px #f1f1f1;
+      -webkit-transition: top 0.7s ease-out;
+      transition: top 0.7s ease-out;
+
+      &.show {
+        top: 0;
+      }
+
+      .icon-logo {
+        float: left;
+        width: 30%;
+        margin: 0;
+        text-align: left;
+
+        &:before {
+          font-size: 30px;
+          color: $gold;
+        }
+      }
+      nav {
+        display: inline-block;
+        width: auto;
+
+        .menu-item {
+          padding: 5px 0;
+          margin: 0 20px;
+        }
+      }
+      .social-links {
+        display: inline-block;
+        float: right;
+        width: 30%;
+        text-align: right;
+
+        a {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+}

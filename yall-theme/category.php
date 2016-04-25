@@ -2,10 +2,9 @@
 
 <main>
     
-  <h2><?php single_cat_title(); ?></h2>
+  <h2 class="title"><?php single_cat_title(); ?></h2>
 
-   <section class="more-section">
-      <div class="more-grid">
+   <section class="more-grid">
 
 
         <?php if (have_posts()) : ?>
@@ -20,7 +19,7 @@
                 } ?>
               </a>
               <div class="item-copy">
-                <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('F jS, Y') ?></p></h4>
+                <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('m.d.y') ?></p></h4>
 
                 <a href="<?php the_permalink() ?>" class="item-title"><?php the_title(); ?></a>
                 <h3 class="item-author"><?php echo get_post_meta( $id, 'Subtitle', true); ?></h3>
@@ -33,7 +32,7 @@
           <?php endwhile; ?>
         <?php endif; ?>
 
-      </div>
+
     </section>
 
 

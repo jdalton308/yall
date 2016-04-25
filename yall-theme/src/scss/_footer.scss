@@ -1,0 +1,119 @@
+
+// Footer
+// --------------
+
+footer {
+  width: 100%;
+  background-color: $offWhite;
+
+  a {
+    color: $text-color;
+  }
+  .subscribe-bar {
+    text-align: center;
+    padding: 20px;
+    @extend h3;
+    font-style: normal;
+    font-weight: 700;
+    border-bottom: 3px solid $white;
+
+    input {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto 0;
+      color: $gold;
+    }
+
+    @media (min-width: $mobile) {
+      input {
+        display: inline-block;
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .footer-body {
+    width: 100%;
+    padding: 30px 20px;
+
+    .footer-col {
+      width: 100%;
+      margin-bottom: 30px;
+
+      &:last-child {
+        .footer-list {
+          .list-item {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+      .footer-title {
+        display: block;
+        font-size: 0.9rem;
+        font-family: $chronicleFonts;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      p,
+      a {
+        font-size: 0.7rem;
+        line-height: 1.8em;
+        font-family: $chronicleBodyFont;
+        color: $text-color;
+      }
+      a {
+        &.disabled {
+          color: $grey-light;
+        }
+      }
+      .footer-list {
+        &:after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+        .list-item {
+          display: inline-block;
+          float: left;
+          width: 50%;
+
+          &.top {
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $mobile) {
+      width: 90%;
+      max-width: 1166px;
+      padding: 55px 0;
+      margin: 0 auto;
+      text-align: center;
+
+
+      .footer-col {
+        display: inline-block;
+        vertical-align: top;
+        // width: 220px;
+        width: 22.92%;
+        // margin-right: 140px;
+        margin-right: 14.58%;
+        text-align: left;
+
+        &:last-child {
+          margin-right: 0;
+        }
+        .footer-list {
+          .list-item {
+            width: 50%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

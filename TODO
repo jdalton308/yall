@@ -1,8 +1,15 @@
 TODO:
 
 Theme:
+
 - Category page, so Q&A, Profiles, and Essays can be sorted
-- Tag page, for States. Could be same as Category
+- Tag page, for States
+
 - Search
 - Email
-- Hero img vs Thumbnail image
+
+- Creating article
+  - Hero img vs Thumbnail image
+  - Page templates for portait hero or landscape hero
+
+- Styling refinement

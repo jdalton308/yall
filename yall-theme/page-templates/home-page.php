@@ -40,7 +40,7 @@ get_header(); ?>
 <!-- Get the lastest post: -->
 <?php
   $args1 = array(
-    'posts_per_page' => 5,
+    'posts_per_page' => 15,
   );
   $the_query = new WP_Query($args1); 
 
@@ -61,7 +61,7 @@ get_header(); ?>
           } ?>
         </a>
         <div class="item-copy">
-          <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('F jS, Y') ?></p></h4>
+          <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('m.d.y') ?></p></h4>
           <a href="<?php the_permalink() ?>" class="item-title"><?php the_title(); ?></a>
           <h3 class="item-author"><?php echo get_post_meta( $id, 'Subtitle', true); ?></h3>
           <h5 class="item-route"><?php echo get_post_meta( $id, 'Start', true); ?> <span class="icon-feather-arrow"></span> <?php echo get_post_meta( $id, 'End', true); ?></h5>
@@ -80,7 +80,7 @@ get_header(); ?>
       <div class="featured-items">
     <?php endif; ?>
 
-  <?php else : ?>
+  <?php else : // index > 4 ?>
 
     <?php if ( $index == 4 ) : ?>
       <section class="more-section">
@@ -89,7 +89,6 @@ get_header(); ?>
     <?php endif; ?>
 
     <div class="more-item">
-
       <a href="<?php the_permalink() ?>" class="img-container">
         <?php if ( has_post_thumbnail() ) {
             the_post_thumbnail();

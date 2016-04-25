@@ -1,0 +1,65 @@
+
+// Variables
+//============================
+
+//// COLORS ////
+$black:		        #000;
+$grey-dark:       #1F2D4C;
+$grey:		        #444;
+$grey-light:	  	#AAA;
+$grey-lighter:    #d6d4d5;
+$offWhite: 		    #f9f9f9;
+$white: 		      #FFF;
+
+$gold:            #bd9b37;
+
+$text-color:      #18223d;
+
+
+//// BREAKPOINTS ////
+$mobile:    768px;
+$tablet:    1024px;
+$desktop:   1200px;
+
+
+//// MIXINS ////
+@mixin transition($time: 0.5s) {
+	-webkit-transition: all $time;
+	transition: all $time;
+}
+@mixin transform($props) {
+  -ms-transform: $props;
+  -webkit-transform: $props;
+  transform: $props;
+}
+@mixin yCenter() {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+@mixin xCenter() {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  @include transform(translateX(-50%));
+}
+@mixin centerEl() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+@mixin tenWideCenter() {
+  width: 100%;
+  max-width: 400px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media (min-width: $mobile) {
+    width: 66.66%;
+    max-width: none;
+    margin: 0 auto;
+  }
+}
