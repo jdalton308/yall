@@ -131,7 +131,7 @@ span.quote {
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
 
 ::selection {
-  color: #18223d;
+  color: #FFF;
   background: #bd9b37; }
 
 @font-face {
@@ -848,7 +848,7 @@ footer {
 
 .hero-title-section {
   margin-bottom: 80px; }
-  .hero-title-section img.hero {
+  .hero-title-section > img {
     width: 100%;
     height: auto;
     display: block; }
@@ -900,6 +900,8 @@ footer {
         top: 0; }
       .hero-title-section .title-copy .article-route:after {
         bottom: 0; }
+    .hero-title-section .title-copy .intro {
+      padding: 100px 0; }
   .hero-title-section.portrait {
     position: relative;
     width: 100%;
@@ -933,9 +935,7 @@ footer {
           margin: 0;
           width: 66%;
           text-align: left;
-          padding: 80px 0 0; }
-          .hero-title-section.portrait .title-copy .intro {
-            padding: 100px 0; } }
+          padding: 80px 0 0; } }
 
 .article-section {
   width: 100%;
@@ -1199,10 +1199,10 @@ footer {
     .about .about-content-section .in-touch-col p {
       font-size: 0.9rem; } }
 
-body.category .title {
+body.archive .title {
   text-align: center;
   margin-bottom: 40px; }
 
 @media (min-width: 768px) {
-  body.category .title {
+  body.archive .title {
     margin: 10px 0 70px; } }

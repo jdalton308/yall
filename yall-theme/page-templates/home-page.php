@@ -49,7 +49,7 @@ get_header(); ?>
   <?php $id = get_the_ID(); ?>
   <?php $index = $the_query->current_post; ?>
   <?php $isLastPost = ($index + 1 < $wp_query->post_count); ?>
-  <?php $isPortrait = ( get_post_meta( $id, 'Portrait', true) == 'true' ); ?>
+  <?php $isPortrait = ( get_post_meta( $id, 'Portrait Thumbnail', true) == 'true' ); ?>
 
   <?php if ($index < 4) : ?>
     <div class="feature-item <?php if ( $index == 0 ) { echo 'hero';} elseif ( $isPortrait) { echo 'portrait'; } else { echo 'landscape'; }?>">
@@ -57,8 +57,8 @@ get_header(); ?>
 
         <a href="<?php the_permalink() ?>" class="img-container">
           <?php if ( has_post_thumbnail() ) {
-              the_post_thumbnail();
-          } ?>
+            the_post_thumbnail();
+          }?>
         </a>
         <div class="item-copy">
           <h4 class="item-type"><?php the_category(', ') ?><span class="divider">|</span><p class="date"><?php the_time('m.d.y') ?></p></h4>
