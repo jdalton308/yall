@@ -101,7 +101,8 @@ p {
   margin: 0 0 10px;
   font-family: "Chronicle SSm A", "Chronicle SSm B", times, serif;
   font-weight: 300; }
-  p.callout {
+  p.callout,
+  p strong {
     font-size: 1.1rem;
     font-weight: 700; }
   p.intro {
@@ -112,19 +113,22 @@ p {
   p.header {
     font-family: "Chronicle Display A", "Chronicle Display B", times, serif; }
   @media (min-width: 768px) {
-    p.callout {
+    p.callout,
+    p strong {
       font-size: 1.2rem; }
     p.intro {
       font-size: 1.0rem; } }
 
-blockquote {
+blockquote, .article-section blockquote,
+blockquote p, .article-section blockquote p {
   position: relative;
   font-size: 1.6rem;
   font-weight: 200;
   font-family: "Chronicle Display A", "Chronicle Display B", times, serif;
   line-height: 1.3em; }
   @media (min-width: 768px) {
-    blockquote {
+    blockquote, .article-section blockquote,
+    blockquote p, .article-section blockquote p {
       font-size: 2.25rem; } }
 
 span.quote {
@@ -214,7 +218,7 @@ main {
   max-width: 1400px;
   margin: 0 auto; }
 
-blockquote {
+blockquote, .article-section blockquote {
   margin: 0; }
 
 figure {
@@ -970,73 +974,87 @@ footer {
     background-color: #18223d;
     border-radius: 50%;
     text-align: center; }
-  .article-section img.left-img, .article-section img.right-img {
+  .article-section .wp-caption {
     display: block;
     width: 100%;
     margin-bottom: 15px; }
-  @media (min-width: 768px) {
-    .article-section img.left-img, .article-section img.right-img {
-      display: inline-block;
-      width: 46%; }
-      .article-section img.left-img.portrait, .article-section img.right-img.portrait {
-        width: 57%; }
-    .article-section img.left-img {
-      float: left;
-      margin: 9px 20px 10px 0; }
-    .article-section img.right-img {
-      float: right;
-      margin: 9px 0 10px 20px; } }
-  .article-section figure {
-    display: block;
-    margin: 35px 0; }
-    .article-section figure img {
-      display: block;
+    .article-section .wp-caption.aligncenter {
+      position: relative;
+      left: -20px;
+      width: calc(100% + 40px); }
+    .article-section .wp-caption img {
       width: 100%;
+      height: auto;
       margin-bottom: 5px; }
-    .article-section figure figcaption {
+    .article-section .wp-caption .wp-caption-text {
       font-size: 12px;
       font-family: "Whitney A", "Whitney B", arial, sans-serif;
       font-weight: 500; }
-  @media (min-width: 768px) {
-    .article-section .far-right-img {
-      float: right;
-      position: relative;
-      left: 5%;
-      display: inline-block;
-      width: 40%;
-      margin: 0 0 20px;
-      padding-top: 9px; } }
-  .article-section .full-width-image img {
-    position: relative;
-    left: -20px;
-    width: calc(100% + 40px); }
-  @media (min-width: 768px) {
-    .article-section .full-width-image img {
-      left: -25%;
-      width: 150%; } }
+    .article-section .wp-caption br {
+      display: none; }
+    @media (min-width: 768px) {
+      .article-section .wp-caption {
+        display: inline-block;
+        width: 46% !important; }
+        .article-section .wp-caption.alignnone {
+          display: block;
+          width: 100% !important; }
+          .article-section .wp-caption.alignnone img {
+            width: 100%; }
+        .article-section .wp-caption.alignright {
+          float: right;
+          margin: 9px 0 10px 20px; }
+          .article-section .wp-caption.alignright img.far-right {
+            position: relative;
+            left: 5%;
+            padding-top: 9px; }
+        .article-section .wp-caption.alignleft {
+          float: left;
+          margin: 9px 20px 10px 0; }
+          .article-section .wp-caption.alignleft img.far-left {
+            position: relative;
+            right: 5%;
+            padding-top: 9px; }
+        .article-section .wp-caption.aligncenter {
+          display: block;
+          left: -25%;
+          width: 150% !important; }
+          .article-section .wp-caption.aligncenter .wp-caption-text {
+            width: 100%;
+            max-width: 400px;
+            padding-left: 20px;
+            padding-right: 20px; } }
+      @media (min-width: 768px) and (min-width: 768px) {
+        .article-section .wp-caption.aligncenter .wp-caption-text {
+          width: 66.66%;
+          max-width: none;
+          margin: 0 auto; } }
   .article-section blockquote {
     display: block;
     position: relative;
     margin: 25px 0; }
-    .article-section blockquote:before {
-      content: '“';
-      position: absolute;
-      top: 0;
-      left: -0.4em; }
-    .article-section blockquote:after {
-      content: '”'; }
+    .article-section blockquote p {
+      display: inline; }
+      .article-section blockquote p:before {
+        content: '“';
+        position: absolute;
+        top: 0;
+        left: -0.4em; }
+      .article-section blockquote p:after {
+        content: '”'; }
     @media (min-width: 768px) {
-      .article-section blockquote {
+      .article-section blockquote p {
         display: inline-block;
         position: relative;
         width: 40%;
-        margin: 0 0 10px; }
-        .article-section blockquote.left {
-          float: left;
-          right: 5%; }
-        .article-section blockquote.right {
+        margin: 0 0 10px;
+        text-align: left !important; }
+        .article-section blockquote p[style="text-align: right;"] {
           float: right;
-          left: 5%; } }
+          left: 5%; }
+        .article-section blockquote p[style="text-align: left;"] {
+          float: left;
+          right: 5%; } }
 
 .credits-section {
   width: 100%;
