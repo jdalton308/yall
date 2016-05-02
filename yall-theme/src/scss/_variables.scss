@@ -23,9 +23,9 @@ $desktop:   1200px;
 
 
 //// MIXINS ////
-@mixin transition($time: 0.5s) {
-	-webkit-transition: all $time;
-	transition: all $time;
+@mixin transition($time: 0.5s, $delay: 0s, $timing: ease) {
+  -webkit-transition: all $time $delay $timing;
+  transition: all $time $delay $timing;
 }
 @mixin transform($props) {
   -ms-transform: $props;

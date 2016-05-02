@@ -5,12 +5,12 @@
   </div>
 
   <footer>
-    <!-- <div class="subscribe-bar">
+    <div class="subscribe-bar">
       <label for="subscribe-email">
         Subscribe to get the latest post in your inbox
         <input type="text" id="subscribe-email" name="subscribe-email">
       </label>
-    </div> -->
+    </div>
 
     <div class="footer-body">
       <div class="footer-col">
